@@ -4,6 +4,10 @@
     fill: none;
   }
 
+.history-cook {
+  text-align: center;
+}
+
 #chartVisualContainer {
   display :inline-block;
 }

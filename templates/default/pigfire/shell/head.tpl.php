@@ -3,3 +3,4 @@
 <script src="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/js/Bar.js"></script>
 <script src="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/js/Chart.js"></script>
 <script src="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/js/TempGauge.js"></script>
+<link rel="stylesheet" href="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/css/custom.css"></link>
