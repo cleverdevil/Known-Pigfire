@@ -24,6 +24,8 @@
 
                 $description = $description . '🐷🔥 :: Now'; 
                 $title = $description;
+                
+                $inhale_endpoint = \Idno\Core\Idno::site()->config()->inhale;
 
                 $t = \Idno\Core\Idno::site()->template();
                 $t->__(array(
@@ -31,7 +33,8 @@
                     'description' => $description,
                     'content'     => array('all'),
                     'body'        => $t->__(array(
-                        'status'  => array() 
+                        'status'  => array(),
+                        'inhale_endpoint' => $inhale_endpoint
                     ))->draw('pages/now'),
                 ))->drawPage();
             }
