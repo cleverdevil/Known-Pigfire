@@ -1,3 +1,74 @@
-.history-cook {
-   text-align : center;
+  #chartVisualContainer path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+  }
+
+#chartVisualContainer {
+  display :inline-block;
 }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
+
+  .legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+  }
+
+  #target-gauge {
+    display : inline-block;
+    margin-right : 30px;
+  }
+
+  #target-gauge g.arc {
+    fill: steelblue;
+  }
+
+  #target-gauge g.pointer {
+    fill: #e85116;
+    stroke: #b64011;
+  }
+
+  #target-gauge g.pointerTwo {
+    fill: blue;
+    stroke: #b64011;
+  }
+
+  #target-gauge g.label text {
+    text-anchor: middle;
+    font-size: 14px;
+    font-weight: bold;
+    fill: #666666;
+  }
+
+  #current-gauge {
+    display : inline-block;
+  }
+
+  #current-gauge g.arc {
+    fill: steelblue;
+  }
+
+  #current-gauge g.pointer {
+    fill: #e85116;
+    stroke: #b64011;
+  }
+
+  #current-gauge g.pointerTwo {
+    fill: blue;
+    stroke: #b64011;
+  }
+
+  #current-gauge g.label text {
+    text-anchor: middle;
+    font-size: 14px;
+    font-weight: bold;
+    fill: #666666;
+  }
