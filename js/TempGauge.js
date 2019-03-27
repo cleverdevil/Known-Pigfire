@@ -224,7 +224,7 @@ d3.select(this.config.container + " .label").remove();
 
 d3.select(this.config.container + " .arc").remove();
 
-var arcs = this.config.svg.append('g')
+var arcs = this.config.svg.insert('g', this.config.container + " .pointer")
     .attr('class', 'arc')
     .attr('transform', centerTx);
 
@@ -237,7 +237,7 @@ arcs.selectAll('path')
     })
     .attr('d', this.config.arc);
 
-    var lg = this.config.svg.append('g')
+    var lg = this.config.svg.insert('g', this.config.container + " .pointer")
         .attr('class', 'label')
         .attr('transform', centerTx);
     lg.selectAll('text')
