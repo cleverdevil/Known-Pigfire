@@ -22,14 +22,14 @@
         var blowerBar = new Bar("grey");
         var currentChart = new Chart(blowerBar);
 
-        currentChart.configure({ container: "#chartVisualContainer" });
+        currentChart.configure({ container: "#chartVisualContainer", title : "Progress"});
 
-        targetTemps.configure()
+        targetTemps.configure({title: "Target"})
         targetTemps.render();
 
         targetTemps.update();
 
-        currentTemps.configure();
+        currentTemps.configure({title: "Current"});
         currentTemps.render();
 
         currentTemps.update();
@@ -37,18 +37,17 @@
         var createdChart = false;
         //update everything
         function updateGaugesAndChart(){
-          d3.json("<?= $inhale_endpoint ?>/cooks/current.json", function(error, currentCook){
+          d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
               var mostRecentUpdate = currentCook.data[currentCook.data.length - 1];
               targetTemps.update({v1 : mostRecentUpdate["cooker-target-temp"], v2 : mostRecentUpdate["meat-target-temp"]});
               currentTemps.update({v1 : mostRecentUpdate["cooker-current-temp"], v2 : mostRecentUpdate["meat-current-temp"]});
-
-          if(createdChart === true){
-              return;
+          if(createdChart === false){
+             currentChart.render(currentCook.data);
+             blowerBar.createCharts();
+             createdChart = true;
+           } else {
+             currentChart.update(currentCook.data);
            }
-
-          currentChart.render(currentCook.data);
-          blowerBar.createCharts();
-          createdChart = true;
 
           });
         }

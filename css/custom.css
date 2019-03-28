@@ -29,6 +29,7 @@
   #target-gauge {
     display : inline-block;
     margin-right : 30px;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
   #target-gauge g.arc {
@@ -54,6 +55,7 @@
 
   #current-gauge {
     display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
   #current-gauge g.arc {
