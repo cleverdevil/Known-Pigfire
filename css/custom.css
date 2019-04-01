@@ -9,6 +9,14 @@
   bottom : 250px;
 }
 
+h1 {
+  text-align : center;
+}
+
+#imported-now-code {
+  text-align : center;
+}
+
 .axis path,
 .axis line {
   fill: none;
@@ -229,9 +237,6 @@ bottom : 250px;
   bottom : 210px;
 }
 
-#imported-now-code {
-  text-align : center;
-}
 
 #mobile-now {
   display : none;
