@@ -189,11 +189,12 @@ bottom : 250px;
 
 @media screen and (min-width: 660px){
 .gauge-labels {
-  position : absolute;
+  /*position : absolute;
   left: 0px;
   top : 20px;
   width : 100%;
   display: inline-block;
+  */
 }
 
 .chart-visual-container  {
@@ -223,11 +224,12 @@ bottom : 250px;
 
 @media screen and (min-width: 1024px){
 .gauge-labels {
-  position : absolute;
+  /*position : absolute;
   left: 0px;
   top : 20px;
   width : 100%;
   display: inline-block;
+  */
 }
 .chart-visual-container  {
   bottom : 200px;
