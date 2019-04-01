@@ -1,80 +1,246 @@
-  #chartVisualContainer path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-  }
-
-.history-cook {
-  text-align: center;
+.chart-visual-container path {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
 }
 
-#chartVisualContainer {
-  display :inline-block;
+.chart-visual-container  {
+  position : relative;
+  bottom : 250px;
 }
 
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-  }
+.axis path,
+.axis line {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
 
-  .legend {
-    font-size: 16px;
-    font-weight: bold;
-    text-anchor: middle;
-  }
+.legend {
+  font-size: 16px;
+  font-weight: bold;
+  text-anchor: middle;
+}
 
-  #target-gauge {
+.target-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.pointer {
+  fill: navy;
+  stroke: navy;
+}
+
+.pointerTwo {
+  fill: steelblue;
+  stroke: steelblue;
+}
+
+.target-gauge g.label text {
+  text-anchor: middle;
+  font-size: 18px;
+  font-weight: bold;
+  fill: black;
+}
+
+.current-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+.current-gauge g.label text {
+  text-anchor: middle;
+  font-size: 18px;
+  font-weight: bold;
+  fill: black;
+}
+
+#mobile-target-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+#mobile-current-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position : relative;
+  bottom : 120px;
+}
+
+#tablet-target-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#tablet-current-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#desktop-target-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#desktop-current-gauge {
+  display : inline-block;
+  font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.arc-title {
+font-size : 30px;
+}
+
+.meat-label {
+font-size : 20px;
+color : navy;
+}
+
+.cooker-label {
+font-size : 20px;
+color : steelblue;
+}
+
+#mobile-now {
+  display : inline-block;
+  position : relative;
+}
+
+#tablet-now {
+  display : none;
+  position : relative;
+}
+
+#desktop-now {
+  display : none;
+  position : relative;
+}
+
+.gauge-labels {
+  display : block;
+}
+
+.temperature-label {
+  font-size : 20px;
+  color : red;
+  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.chart-labels {
+  position : relative;
+text-align : center;
+bottom : 250px;
+}
+
+.cooker-target-temp-label {
+    color : red;
     display : inline-block;
-    margin-right : 30px;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+    vertical-align: top;
+    font-weight : bold;
+    font-size : 20px;
+    margin-right : 10px;
+}
 
-  #target-gauge g.arc {
-    fill: steelblue;
-  }
+.cooker-current-temp-label {
+  color : orange;
+  display : inline-block;
+  vertical-align: top;
+  font-weight : bold;
+  font-size : 20px;
+  margin-right : 10px;
+}
 
-  #target-gauge g.pointer {
-    fill: #e85116;
-    stroke: #b64011;
-  }
+.meat-target-temp-label {
+  color : blue;
+  display : inline-block;
+  vertical-align: top;
+  font-weight : bold;
+  font-size : 20px;
+  margin-right : 10px;
+}
 
-  #target-gauge g.pointerTwo {
-    fill: blue;
-    stroke: #b64011;
-  }
+.meat-current-temp-label {
+  color : green;
+  display : inline-block;
+  vertical-align: top;
+  font-weight : bold;
+  font-size : 20px;
+  margin-right : 10px;
+}
 
-  #target-gauge g.label text {
-    text-anchor: middle;
-    font-size: 14px;
-    font-weight: bold;
-    fill: #666666;
-  }
+.blower-on-label {
+  color : grey;
+  display : inline-block;
+  vertical-align: top;
+  font-weight : bold;
+  font-size : 20px;
+}
 
-  #current-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+@media screen and (min-width: 660px){
+.gauge-labels {
+  position : absolute;
+  left: 0px;
+  top : 20px;
+  width : 100%;
+  display: inline-block;
+}
 
-  #current-gauge g.arc {
-    fill: steelblue;
-  }
+.chart-visual-container  {
+  bottom : 130px;
+}
 
-  #current-gauge g.pointer {
-    fill: #e85116;
-    stroke: #b64011;
-  }
+.chart-labels {
+  bottom : 140px;
+}
 
-  #current-gauge g.pointerTwo {
-    fill: blue;
-    stroke: #b64011;
-  }
 
-  #current-gauge g.label text {
-    text-anchor: middle;
-    font-size: 14px;
-    font-weight: bold;
-    fill: #666666;
-  }
+#mobile-now {
+  display : none;
+  position : relative;
+}
+
+#tablet-now {
+  display : block;
+  position : relative;
+}
+
+#desktop-now {
+  display : none;
+  position : relative;
+}
+}
+
+@media screen and (min-width: 1024px){
+.gauge-labels {
+  position : absolute;
+  left: 0px;
+  top : 20px;
+  width : 100%;
+  display: inline-block;
+}
+.chart-visual-container  {
+  bottom : 200px;
+}
+
+.chart-labels {
+  bottom : 210px;
+}
+
+#mobile-now {
+  display : none;
+  position : relative;
+}
+
+#tablet-now {
+  display : none;
+  position : relative;
+}
+
+#desktop-now {
+  display : block;
+  position : relative;
+}
+}

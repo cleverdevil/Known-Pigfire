@@ -4,7 +4,7 @@ var Chart = function (bar) {
 
             this.config = {
                 //setting margins
-                margin: { top: 30, right: 20, bottom: 70, left: 50 },
+                margin: { top: 30, right: 20, bottom: 30, left: 50 },
                 width: (900 - (20 + 50)),
                 height: (350 - (30 + 70)),
                 parseDate: d3.time.format.iso.parse,
@@ -33,7 +33,7 @@ var Chart = function (bar) {
 
             // Define the axes
             this.config.xAxis = d3.svg.axis().scale(this.config.x)
-                .orient("bottom").ticks(6);
+                .orient("bottom").ticks(this.config.xTicks);
 
             this.config.yAxis = d3.svg.axis().scale(this.config.y)
                 .orient("left").ticks(10);
@@ -64,14 +64,14 @@ var Chart = function (bar) {
             // config.container would be a separate container from the body
             this.config.svg = d3.select(this.config.container)
                 .append('svg')
-                .attr('id', 'chartVisual')
+                .attr('id', this.config.container.slice(1) + 'chart-visual')
                 .attr('width', this.config.width + this.config.margin.left + this.config.margin.right)
                 .attr('height', this.config.height + this.config.margin.top + this.config.margin.bottom)
                 .append("g")
                 .attr("transform",
-                    "translate(" + this.config.margin.left + "," + this.config.margin.top + ")");
+                    "translate(" + (this.config.margin.left) + "," + this.config.margin.top + ")");
 
-            this.update(data);
+            this.createFirst(data);
 
             if (this.bar.passedSVG === undefined) {
                 this.bar.assignSVG(this.config.svg);
@@ -128,6 +128,7 @@ var Chart = function (bar) {
 
                 this.config.svg.append("path")
                     .attr("class", "line")
+                    .attr("id", name)
                     .style("stroke-dasharray", ("4, 4"))
                     .style("stroke-width", 5)
                     .style("stroke", color)
@@ -136,7 +137,8 @@ var Chart = function (bar) {
             } else {
 
                 this.config.svg.append("path")
-                    .attr("class", "line")
+                    .attr("class", "line " + name)
+                    .attr("id", name)
                     .style("stroke-width", 5)
                     .style("stroke", color)
                     .attr("d", this.lineProcessorGenerator(data, name, this, trackX));
@@ -146,7 +148,7 @@ var Chart = function (bar) {
 
 
 
-        Chart.prototype.update = function (data) {
+        Chart.prototype.createFirst = function (data) {
 
             var that = this;
 
@@ -162,21 +164,21 @@ var Chart = function (bar) {
 
             this.appendLine(data, true, "red", "cooker-target-temp", true);
 
-            this.textGenerator(5, "cooker-target-temp", 0, "red");
+            //this.textGenerator(5, "cooker-target-temp", 0, "red");
 
             this.appendLine(data, false, "orange", "cooker-current-temp", false);
 
-            this.textGenerator(5, "cooker-current-temp", 1, "orange");
+        //    this.textGenerator(5, "cooker-current-temp", 1, "orange");
 
             this.appendLine(data, true, "blue", "meat-target-temp", false);
 
-            this.textGenerator(5, "meat-target-temp", 2, "blue");
+        //    this.textGenerator(5, "meat-target-temp", 2, "blue");
 
             this.appendLine(data, false, "green", "meat-current-temp", false);
 
-            this.textGenerator(5, "meat-current-temp", 3, "green");
+          //  this.textGenerator(5, "meat-current-temp", 3, "green");
 
-            this.textGenerator(5, "blower-on", 4, "purple");
+          //  this.textGenerator(5, "blower-on", 4, "lightgrey");
 
             this.config.svg.append("g")
                 .attr("class", "x axis")
@@ -187,5 +189,56 @@ var Chart = function (bar) {
             this.config.svg.append("g")
                 .attr("class", "y axis")
                 .call(this.config.yAxis);
+
+        };
+
+
+        Chart.prototype.update = function (data) {
+
+          var that = this;
+
+          var maxTemp = this.getMaxTemp(data);
+
+          data.forEach(function (d) {
+              d.datetime = that.config.parseDate(d.datetime);
+          });
+
+          // Scale the range of the data
+          this.config.x.domain(d3.extent(data, function (d) { return d.datetime; }));
+          this.config.y.domain([0, maxTemp]);
+
+  // Select the section we want to apply our changes to
+  var svg = this.config.svg.transition();
+
+  var maxCookerCurrentTemp = d3.max(data, function (d) { return d["cooker-current-temp"]; });
+
+  var maxMeatTargetTemp = d3.max(data, function (d) { return d["meat-target-temp"]; });
+
+  var maxMeatCurrentTemp = d3.max(data, function (d) { return d["meat-current-temp"]; });
+  // Make the changes
+
+      svg.select("#cooker-target-temp")   // change the line
+          .duration(750)
+          .attr("d", this.lineProcessorGenerator(data, "cooker-target-temp", this, false));
+
+      svg.select("#cooker-current-temp")   // change the line
+          .duration(750)
+          .attr("d", this.lineProcessorGenerator(data, "cooker-current-temp", this, false));
+
+      svg.select("#meat-target-temp")   // change the line
+          .duration(750)
+          .attr("d", this.lineProcessorGenerator(data, "meat-target-temp", this, false));
+
+      svg.select("#meat-current-temp")   // change the line
+          .duration(750)
+          .attr("d", this.lineProcessorGenerator(data, "meat-current-temp", this, false));
+
+      svg.select(".x.axis") // change the x axis
+          .duration(750)
+          .call(this.config.xAxis);
+
+      svg.select(".y.axis") // change the y axis
+          .duration(750)
+          .call(this.config.yAxis);
 
         };

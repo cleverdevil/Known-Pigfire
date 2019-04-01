@@ -1,8 +1,10 @@
-var Bar = function (color) {
+var Bar = function (color, height) {
            this.allTimes = [];
            this.xStartBlowingXPos = undefined;
            this.color = color;
            this.passedSVG = undefined;
+           this.config = {};
+           this.config.height = height;
        }
 
        Bar.prototype.assignSVG = function (passedSVG) {
@@ -33,9 +35,8 @@ var Bar = function (color) {
                .attr("x", this.xStartBlowingXPos)
                .attr("width", endingXPos - this.xStartBlowingXPos)
                .attr("y", 0)
-               .attr("height", 250);
+               .attr("height", this.config.height);
        };
-
 
        Bar.prototype.createCharts = function () {
 

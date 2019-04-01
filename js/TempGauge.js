@@ -1,5 +1,4 @@
-function TempGauge(container, config) {
-
+function TempGauge(container) {
     prop = undefined;
 
     this.config = {
@@ -21,13 +20,11 @@ function TempGauge(container, config) {
         maxAngle: 90,
 
 
-        majorTicks: 5,
+        majorTicks: undefined,
         labelFormat: d3.format(',g'),
         labelInset: 10,
 
-      //  arcColorFn: d3.interpolateHsl(d3.rgb("lightcoral"), d3.rgb("firebrick")),
-
-        arcColorFn: ["green", "yellow", "orange", "orangered " ,"red"],
+       arcColorFn: d3.interpolateHsl(d3.rgb("limegreen"), d3.rgb("orangered")),
 
         range: undefined,
         r: undefined,
@@ -39,13 +36,19 @@ function TempGauge(container, config) {
         ticks: undefined,
         tickData: undefined,
         pointer: undefined,
-        maxValue: 10,
-        transitionMs: 400
+        maxValue: 300,
+        transitionMs: 400,
+        title : "Default",
+      //  labels : [{text : "Target"}, {text : "Current"}]
 
     }
 
     this.config.container = container;
 
+}
+
+TempGauge.prototype.setMajorTicks = function deg2rad(max) {
+    this.config.majorTicks = max / 50;
 }
 
 TempGauge.prototype.deg2rad = function deg2rad(deg) {
@@ -58,11 +61,11 @@ TempGauge.prototype.newAngle = function newAngle(d) {
     return newAngle;
 }
 
-TempGauge.prototype.configure = function configure(configuration) {
+TempGauge.prototype.configure = function configure(config) {
     var that = this;
     var prop = undefined;
-    for (prop in configuration) {
-        this.config[prop] = configuration[prop];
+    for (prop in config) {
+        this.config[prop] = config[prop];
     }
 
     this.config.range = this.config.maxAngle - this.config.minAngle;
@@ -71,8 +74,9 @@ TempGauge.prototype.configure = function configure(configuration) {
 
     // a linear scale that maps domain values to a percent from 0..1
     this.config.scale = d3.scale.linear()
-        .range([0, 1]);
-        .domain([this.config.minValue, this.config.maxValue]);
+    .range([0, 1])
+
+    this.config.scale.domain([0, 5000]);
 
     this.config.ticks = this.config.scale.ticks(this.config.majorTicks);
     this.config.tickData = d3.range(this.config.majorTicks).map(function () { return 1 / that.config.majorTicks; });
@@ -91,7 +95,9 @@ TempGauge.prototype.configure = function configure(configuration) {
 }
 
 TempGauge.prototype.centerTranslation = function () {
-    return 'translate(' + this.config.r + ',' + this.config.r + ')';
+  // extra 20 px for f sign
+  return "translate(" + String((this.config.clipWidth/2) + 20) + ", " + String(this.config.clipHeight/2) + ")";
+//    return 'translate(' + this.config.r + ',' + this.config.r + ')';
 }
 
 TempGauge.prototype.isRendered = function () {
@@ -100,15 +106,33 @@ TempGauge.prototype.isRendered = function () {
 
 TempGauge.prototype.getMaxTemp = function (data) {
 
-    var maxCookerTargetTemp = d3.max(data, function (d) { return d["cooker-target-temp"]; });
+  var maxTemp = 600;
 
-    var maxCookerCurrentTemp = d3.max(data, function (d) { return d["cooker-current-temp"]; });
+  var amtToHundred;
 
-    var maxMeatTargetTemp = d3.max(data, function (d) { return d["meat-target-temp"]; });
+  if (data === undefined){
 
-    var maxMeatCurrentTemp = d3.max(data, function (d) { return d["meat-current-temp"]; });
+      return maxTemp;
 
-    var maxTemp = d3.max([maxCookerTargetTemp, maxCookerCurrentTemp, maxMeatTargetTemp, maxMeatCurrentTemp], function (d) { return d });
+  }
+
+    if(data.v1 >= data.v2){
+
+        maxTemp =  data.v1;
+
+    } else {
+  maxTemp =  data.v2;
+
+    }
+
+amtToHundred = 100 - (maxTemp % 100);
+
+if(amtToHundred === 100){
+
+  amtToHundred = 0;
+}
+
+maxTemp = amtToHundred + maxTemp;
 
     return maxTemp;
 
@@ -118,13 +142,24 @@ TempGauge.prototype.render = function (newValues) {
 
     var that = this;
 
+    this.createTitle();
+
     this.config.svg = d3.select(this.config.container)
         .append('svg:svg')
         .attr('class', 'gauge')
         .attr('width', this.config.clipWidth)
         .attr('height', this.config.clipHeight);
 
+        /*var arcs = this.config.svg.append('text')
+            .attr('class', 'tempLabel')
+            .attr('transform', "translate(" + 0 + ", " + String(this.config.clipHeight/2) + ")")
+            .text("℉");
+*/
+//this.createBottomLabels();
+
     var centerTx = this.centerTranslation();
+
+//centerTx =  "translate(" + String(this.config.clipWidth/2) + ", " + String(this.config.clipHeight/2) + ")";
 
     var arcs = this.config.svg.append('g')
         .attr('class', 'arc')
@@ -134,12 +169,16 @@ TempGauge.prototype.render = function (newValues) {
         .data(this.config.tickData)
         .enter().append('path')
         .attr('fill', function (d, i) {
-            return that.config.arcColorFn[i]
-            // that.config.arcColorFn(d * i);
+        //    return that.config.arcColorFn[i]
+        if(i === this.config.tickData.length - 1){
+          return "orangered";
+        } else {
+            return that.config.arcColorFn(d * i);
+          }
         })
         .attr('d', this.config.arc);
 
-    var lg = this.config.svg.append('g')
+    var lg = this.config.svg.insert('g')
         .attr('class', 'label')
         .attr('transform', centerTx);
     lg.selectAll('text')
@@ -179,6 +218,42 @@ TempGauge.prototype.render = function (newValues) {
     this.update(newValues === undefined ? 0 : newValues);
 }
 
+TempGauge.prototype.createTitle = function(){
+  var parentElem;
+
+  titleElem = document.createElement("div");
+  titleElem.setAttribute("class", "arc-title");
+  titleElem.textContent = this.config.title;
+
+  parentElem = document.getElementById(this.config.container.slice(1));
+
+  parentElem.appendChild(titleElem)
+
+}
+
+TempGauge.prototype.createBottomLabels = function(){
+  var i;
+  var containerBottomLabelsElem;
+  var currentLabel;
+  var parentElem;
+
+  parentElem = document.getElementById(this.config.container.slice(1));
+
+  containerBottomLabelsElem = document.createElement("div");
+  containerBottomLabelsElem.setAttribute("class", "arcBottomLabelContainer");
+
+  for (i = 0; i < this.config.labels.length; ++i){
+    currentLabel = document.createElement("div");
+    currentLabel.setAttribute("class", "arcLabel");
+    currentLabel.textContent = this.config.labels[i].text;
+    containerBottomLabelsElem.appendChild(currentLabel);
+  }
+
+  parentElem.appendChild(containerBottomLabelsElem);
+
+}
+
+
 TempGauge.prototype.update = function (newValues, newConfiguration) {
     if (newConfiguration !== undefined) {
         this.configure(newConfiguration);
@@ -189,25 +264,85 @@ TempGauge.prototype.update = function (newValues, newConfiguration) {
     var newAngle;
     var newAngle2;
 
+   var that = this;
+   var nexMaxTemp = this.getMaxTemp(newValues);
+
+   this.setMajorTicks(nexMaxTemp)
+
+    //draw new ticks based on max
+    this.config.scale.domain([this.config.minValue, nexMaxTemp]);
+    this.config.ticks = this.config.scale.ticks(this.config.majorTicks);
+    //how many times then map it
+    this.config.tickData = d3.range(this.config.ticks.length - 1).map(function () { return 1 / (that.config.ticks.length  - 1) });
+
+var centerTx = this.centerTranslation();
+
+centerTx =  "translate(" + String(this.config.clipWidth/2) + ", " + String(this.config.clipHeight/2) + ")";
+//removes and redraws gauge
+d3.select(this.config.container + " .label").remove();
+
+d3.select(this.config.container + " .arc").remove();
+
+var arcs = this.config.svg.insert('g', this.config.container + " .pointer")
+    .attr('class', 'arc')
+    .attr('transform', centerTx);
+
+arcs.selectAll('path')
+    .data(this.config.tickData)
+    .enter().append('path')
+    .attr('fill', function (d, i) {
+        if(i === that.config.tickData.length - 1){
+          return "red";
+        } else {
+            return that.config.arcColorFn(d * i);
+        }
+    })
+    .attr('d', this.config.arc);
+
+    var lg = this.config.svg.insert('g', this.config.container + " .pointer")
+        .attr('class', 'label')
+        .attr('transform', centerTx);
+    lg.selectAll('text')
+        .data(this.config.ticks)
+        .enter().append('text')
+        .attr('transform', function (d) {
+            var ratio = that.config.scale(d);
+            var newAngle = that.config.minAngle + (ratio * that.config.range);
+            return 'rotate(' + newAngle + ') translate(0,' + (that.config.labelInset - that.config.r) + ')';
+        })
+        .text(this.config.labelFormat);
+
+// if it is undefined or 0 it is first time. Run default
     if (newValues === 0 || newValues === undefined) {
-        ratio = this.config.scale(0);
-        ratio2 = this.config.scale(0);
+      newAngle = -90;
+      newAngle2 = -90;
+
+      this.config.pointer.transition()
+          .duration(this.config.transitionMs)
+          .ease('elastic')
+          .attr('transform', 'rotate(' + newAngle + ')');
+
+      this.config.pointer2.transition()
+          .duration(this.config.transitionMs)
+          .ease('elastic')
+          .attr('transform', 'rotate(' + newAngle2 + ')');
     } else {
         ratio = this.config.scale(newValues.v1);
         ratio2 = this.config.scale(newValues.v2);
+        newAngle = this.config.minAngle + (ratio * this.config.range);
+        newAngle2 = this.config.minAngle + (ratio2 * this.config.range);
+
+        this.config.pointer.transition()
+            .duration(this.config.transitionMs)
+            .ease('elastic')
+            .attr('transform', 'rotate(' + newAngle + ')');
+
+        this.config.pointer2.transition()
+            .duration(this.config.transitionMs)
+            .ease('elastic')
+            .attr('transform', 'rotate(' + newAngle2 + ')');
     }
 
-    newAngle = this.config.minAngle + (ratio * this.config.range);
-    newAngle2 = this.config.minAngle + (ratio2 * this.config.range);
 
-    this.config.pointer.transition()
-        .duration(this.config.transitionMs)
-        .ease('elastic')
-        .attr('transform', 'rotate(' + newAngle + ')');
-
-    this.config.pointer2.transition()
-        .duration(this.config.transitionMs)
-        .ease('elastic')
-        .attr('transform', 'rotate(' + newAngle2 + ')');
 
 }
