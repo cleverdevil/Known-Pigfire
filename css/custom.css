@@ -229,6 +229,10 @@ bottom : 250px;
   bottom : 210px;
 }
 
+#imported-now-code {
+  text-align : center;
+}
+
 #mobile-now {
   display : none;
   position : relative;

@@ -9,6 +9,7 @@
         <h1 class="p-name">Current Status</h1>
 
         <!-- begin imported code -->
+        <div id="imported-now-code">
         <div class="gauge-labels"><div class="meat-label">Meat</div><div class="cooker-label">Cooker</div><div class="temperature-label">&#x000B0;F</div></div>
         <div id="mobile-now">
           <div class="target-gauge" id="mobile-target-gauge"></div>
@@ -35,7 +36,7 @@
           <div class="meat-current-temp-label">meat-current-temp</div>
           <div class="blower-on-label">blower-on-status</div>
         </div>
-
+</div>
         <script>
 
         var SvgScreenDeviceGenerator = function(deviceName){
