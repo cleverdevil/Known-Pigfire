@@ -252,6 +252,7 @@
         }]}
         });
         });
+        </script>
         <!-- end imported code -->
 
 
