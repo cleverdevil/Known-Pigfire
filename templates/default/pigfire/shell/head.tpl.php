@@ -5,3 +5,5 @@
 <script src="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/js/TempGauge.js"></script>
 <script src="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/js/SummaryChart.js"></script>
 <link rel="stylesheet" href="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/css/custom.css"></link>
+<link rel="stylesheet" href="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/css/history.css"></link>
+<link rel="stylesheet" href="<?= \Idno\Core\site()->config()->url; ?>IdnoPlugins/Pigfire/css/now.css"></link>

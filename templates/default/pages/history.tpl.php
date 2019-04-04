@@ -11,7 +11,7 @@
         (<?= $cook_id ?>)
 
         <!--inputted code starts here -->
-<div class="container-input">
+<div class="container-input-history">
 
         <div id="mobile-now">
 
@@ -77,7 +77,7 @@
           var currentURL = window.location.href;
           var cookerID = currentURL.slice(currentURL.indexOf("/history/") + 10);
 
-          cookerID = 
+          cookerID =
 
           srcURL = + cookerID + ".json";
         }

@@ -1,4 +1,4 @@
-	.input-container {
+	.container-input-history {
 		font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 		margin: 32px;
     text-align : center;
@@ -35,13 +35,13 @@ font: 12px Arial;
     }
 
 
-  .chart-visual-container path {
+  container-input-history .chart-visual-container path {
     stroke: steelblue;
     stroke-width: 2;
     fill: none;
   }
 
-  .chart-visual-container  {
+  container-input-history .chart-visual-container  {
     position : relative;
 
   }
@@ -168,7 +168,7 @@ font: 12px Arial;
     font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif
   }
 
-  .chart-labels {
+  container-input-history .chart-labels {
     position : relative;
 text-align : center;
   }
@@ -277,7 +277,3 @@ text-align : center;
     display : block;
     position : relative;
   }
-
-
-
-

@@ -1,257 +1,253 @@
-.input-container{
-		font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-		margin: 32px;
-    text-align : center;
-    margin : 0;
-	}
+.input-html {
+	font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align : center;
+	margin : 0;
+	font: 12px Arial;
+}
 
-  body {
-    font: 12px Arial;
-  }
+.input-html .chart-visual-container path {
+	stroke: steelblue;
+	stroke-width: 2;
+	fill: none;
+}
 
-  .chart-visual-container path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
-  }
+.input-html .chart-visual-container  {
+	position : relative;
+	bottom : 250px;
+}
 
-  .chart-visual-container  {
-    position : relative;
-    bottom : 250px;
-  }
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
 
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-  }
+.legend {
+	font-size: 16px;
+	font-weight: bold;
+	text-anchor: middle;
+}
 
-  .legend {
-    font-size: 16px;
-    font-weight: bold;
-    text-anchor: middle;
-  }
+.target-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
-  .target-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+.pointer {
+	fill: navy;
+	stroke: navy;
+}
 
-  .pointer {
-    fill: navy;
-    stroke: navy;
-  }
+.pointerTwo {
+	fill: steelblue;
+	stroke: steelblue;
+}
 
-  .pointerTwo {
-    fill: steelblue;
-    stroke: steelblue;
-  }
+.target-gauge g.label text {
+	text-anchor: middle;
+	font-size: 18px;
+	font-weight: bold;
+	fill: black;
+}
 
-  .target-gauge g.label text {
-    text-anchor: middle;
-    font-size: 18px;
-    font-weight: bold;
-    fill: black;
-  }
+.current-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif
+}
 
-  .current-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif
-  }
+.current-gauge g.label text {
+	text-anchor: middle;
+	font-size: 18px;
+	font-weight: bold;
+	fill: black;
+}
 
-  .current-gauge g.label text {
-    text-anchor: middle;
-    font-size: 18px;
-    font-weight: bold;
-    fill: black;
-  }
-
-  #mobile-target-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+#mobile-target-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
 
-  #mobile-current-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-    position : relative;
-    bottom : 120px;
-  }
+#mobile-current-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+	position : relative;
+	bottom : 120px;
+}
 
-  #tablet-target-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+#tablet-target-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
-  #tablet-current-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+#tablet-current-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
-  #desktop-target-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+#desktop-target-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
-  #desktop-current-gauge {
-    display : inline-block;
-    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
+#desktop-current-gauge {
+	display : inline-block;
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 
 .arc-title {
-  font-size : 30px;
+font-size : 30px;
 }
 
 .current-label {
-  font-size : 20px;
-  color : navy;
+font-size : 20px;
+color : navy;
 }
 
 .meat-label {
-  font-size : 20px;
-  color : steelblue;
+font-size : 20px;
+color : steelblue;
 }
 
-  #mobile-now {
-    display : inline-block;
-    position : relative;
-  }
+#mobile-now {
+	display : inline-block;
+	position : relative;
+}
 
-  #tablet-now {
-    display : none;
-    position : relative;
-  }
+#tablet-now {
+	display : none;
+	position : relative;
+}
 
-  #desktop-now {
-    display : none;
-    position : relative;
-  }
+#desktop-now {
+	display : none;
+	position : relative;
+}
 
-  .gauge-labels {
-    display : block;
-  }
+.gauge-labels {
+	display : block;
+}
 
-  .temperature-label {
-    font-size : 20px;
-    color : red;
-    font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif
-  }
+.temperature-label {
+	font-size : 20px;
+	color : red;
+	font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif
+}
 
-  .chart-labels {
-    position : relative;
+.input-html .chart-labels {
+	position : relative;
 text-align : center;
 bottom : 250px;
-  }
+}
 
-  .cooker-target-temp-label {
-      color : red;
-      display : inline-block;
-      vertical-align: top;
-      font-weight : bold;
-      font-size : 20px;
-      margin-right : 10px;
-  }
+.cooker-target-temp-label {
+		color : red;
+		display : inline-block;
+		vertical-align: top;
+		font-weight : bold;
+		font-size : 20px;
+		margin-right : 10px;
+}
 
-  .cooker-current-temp-label {
-    color : orange;
-    display : inline-block;
-    vertical-align: top;
-    font-weight : bold;
-    font-size : 20px;
-    margin-right : 10px;
-  }
+.cooker-current-temp-label {
+	color : orange;
+	display : inline-block;
+	vertical-align: top;
+	font-weight : bold;
+	font-size : 20px;
+	margin-right : 10px;
+}
 
-  .meat-target-temp-label {
-    color : blue;
-    display : inline-block;
-    vertical-align: top;
-    font-weight : bold;
-    font-size : 20px;
-    margin-right : 10px;
-  }
+.meat-target-temp-label {
+	color : blue;
+	display : inline-block;
+	vertical-align: top;
+	font-weight : bold;
+	font-size : 20px;
+	margin-right : 10px;
+}
 
-  .meat-current-temp-label {
-    color : green;
-    display : inline-block;
-    vertical-align: top;
-    font-weight : bold;
-    font-size : 20px;
-    margin-right : 10px;
-  }
+.meat-current-temp-label {
+	color : green;
+	display : inline-block;
+	vertical-align: top;
+	font-weight : bold;
+	font-size : 20px;
+	margin-right : 10px;
+}
 
-  .blower-on-label {
-    color : grey;
-    display : inline-block;
-    vertical-align: top;
-    font-weight : bold;
-    font-size : 20px;
-  }
+.blower-on-label {
+	color : grey;
+	display : inline-block;
+	vertical-align: top;
+	font-weight : bold;
+	font-size : 20px;
+}
 
 @media screen and (min-width: 660px){
-  .gauge-labels {
-    position : absolute;
-    left: 0px;
-    top : 20px;
-    width : 100%;
-    display: inline-block;
-  }
+.gauge-labels {
+	position : absolute;
+	left: 0px;
+	top : 20px;
+	width : 100%;
+	display: inline-block;
+}
 
-  .chart-visual-container  {
-    bottom : 130px;
-  }
+.input-html  .chart-visual-container  {
+	bottom : 130px;
+}
 
-  .chart-labels {
-    bottom : 140px;
-  }
+.chart-labels {
+	bottom : 140px;
+}
 
 
-  #mobile-now {
-    display : none;
-    position : relative;
-  }
+#mobile-now {
+	display : none;
+	position : relative;
+}
 
-  #tablet-now {
-    display : block;
-    position : relative;
-  }
+#tablet-now {
+	display : block;
+	position : relative;
+}
 
-  #desktop-now {
-    display : none;
-    position : relative;
-  }
+#desktop-now {
+	display : none;
+	position : relative;
+}
 }
 
 @media screen and (min-width: 1024px){
-  .gauge-labels {
-    position : absolute;
-    left: 0px;
-    top : 20px;
-    width : 100%;
-    display: inline-block;
-  }
-  .chart-visual-container  {
-    bottom : 200px;
-  }
+.gauge-labels {
+	position : absolute;
+	left: 0px;
+	top : 20px;
+	width : 100%;
+	display: inline-block;
+}
+.input-html .chart-visual-container  {
+	bottom : 200px;
+}
 
-  .chart-labels {
-    bottom : 210px;
-  }
+.chart-labels {
+	bottom : 210px;
+}
 
-  #mobile-now {
-    display : none;
-    position : relative;
-  }
+#mobile-now {
+	display : none;
+	position : relative;
+}
 
-  #tablet-now {
-    display : none;
-    position : relative;
-  }
+#tablet-now {
+	display : none;
+	position : relative;
+}
 
-  #desktop-now {
-    display : block;
-    position : relative;
-  }
+#desktop-now {
+	display : block;
+	position : relative;
+}
 }
