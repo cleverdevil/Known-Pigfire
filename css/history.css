@@ -1,0 +1,283 @@
+	.input-container {
+		font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+		margin: 32px;
+    text-align : center;
+    margin : 0;
+font: 12px Arial;
+	}
+
+  .summary-chart-labels {
+    font-size : 20px;
+  }
+
+    .summary-chart-labels .cooker-minimum-temp-label{
+         color : green;
+         display : inline-block;
+         vertical-align: top;
+    }
+
+    .summary-chart-labels .cooker-maximum-temp-label{
+         color : blue;
+         display : inline-block;
+         vertical-align: top;
+    }
+
+    .summary-chart-labels .meat-minimum-temp-label{
+         color : orange;
+         display : inline-block;
+         vertical-align: top;
+    }
+
+    .summary-chart-labels .meat-maximum-temp-label{
+      color : red;
+      display : inline-block;
+      vertical-align: top;
+    }
+
+
+  .chart-visual-container path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .chart-visual-container  {
+    position : relative;
+
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+  }
+
+  .fahrenheitSign {
+   color : red;
+   font-size : 20px;
+   float : left;
+  }
+
+  .legend {
+    font-size: 16px;
+    text-anchor: middle;
+  }
+
+  .target-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  .pointer {
+    fill: navy;
+    stroke: navy;
+  }
+
+  .pointerTwo {
+    fill: steelblue;
+    stroke: steelblue;
+  }
+
+  .target-gauge g.label text {
+    text-anchor: middle;
+    font-size: 18px;
+    fill: black;
+  }
+
+  .current-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif
+  }
+
+  .current-gauge g.label text {
+    text-anchor: middle;
+    font-size: 18px;
+    fill: black;
+  }
+
+  #mobile-target-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+
+  #mobile-current-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position : relative;
+  }
+
+  #tablet-target-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  #tablet-current-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  #desktop-target-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  #desktop-current-gauge {
+    display : inline-block;
+    font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+.arc-title {
+  font-size : 30px;
+}
+
+.meat-label {
+  font-size : 20px;
+  color : navy;
+}
+
+.cooker-label {
+  font-size : 20px;
+  color : steelblue;
+}
+
+  #mobile-now {
+    display : inline-block;
+    position : relative;
+  }
+
+  #tablet-now {
+    display : none;
+    position : relative;
+  }
+
+  #desktop-now {
+    display : none;
+    position : relative;
+  }
+
+  .gauge-labels {
+    display : block;
+  }
+
+  .temperature-label {
+    font-size : 20px;
+    color : red;
+    font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif
+  }
+
+  .chart-labels {
+    position : relative;
+text-align : center;
+  }
+
+  .cooker-target-temp-label {
+      color : red;
+      display : inline-block;
+      vertical-align: top;
+      font-size : 20px;
+      margin-right : 10px;
+  }
+
+  .cooker-current-temp-label {
+    color : orange;
+    display : inline-block;
+    vertical-align: top;
+
+    font-size : 20px;
+    margin-right : 10px;
+  }
+
+  .meat-target-temp-label {
+    color : blue;
+    display : inline-block;
+    vertical-align: top;
+
+    font-size : 20px;
+    margin-right : 10px;
+  }
+
+  .meat-current-temp-label {
+    color : green;
+    display : inline-block;
+    vertical-align: top;
+    font-size : 20px;
+    margin-right : 10px;
+  }
+
+  .blower-on-label {
+    color : grey;
+    display : inline-block;
+    vertical-align: top;
+    font-size : 20px;
+  }
+
+@media screen and (min-width: 660px){
+  .gauge-labels {
+    position : absolute;
+    left: 0px;
+    top : 20px;
+    width : 100%;
+    display: inline-block;
+  }
+
+  .chart-visual-container  {
+
+  }
+
+  .chart-labels {
+
+  }
+
+  #mobile-now {
+    display : block;
+    position : relative;
+  }
+
+  #tablet-now {
+    display : block;
+    position : relative;
+  }
+
+  #desktop-now {
+    display : none;
+    position : relative;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .gauge-labels {
+    position : absolute;
+    left: 0px;
+    top : 20px;
+    width : 100%;
+    display: inline-block;
+  }
+  .chart-visual-container  {
+
+  }
+
+  .chart-labels {
+
+  }
+
+  #mobile-now {
+    display : none;
+    position : relative;
+  }
+
+  #tablet-now {
+    display : none;
+    position : relative;
+  }
+
+  #desktop-now {
+    display : block;
+    position : relative;
+  }
+
+
+
+

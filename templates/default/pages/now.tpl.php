@@ -9,8 +9,9 @@
         <h1 class="p-name">Current Status</h1>
 
         <!-- begin imported code -->
-        <div id="imported-now-code">
-        <div class="gauge-labels"><div class="meat-label">Meat</div><div class="cooker-label">Cooker</div><div class="temperature-label">&#x000B0;F</div></div>
+
+<div class="input-container">
+        <div class="gauge-labels"><div class="current-label">Current</div><div class="meat-label">Target</div><div class="temperature-label">&#x000B0;F</div></div>
         <div id="mobile-now">
           <div class="target-gauge" id="mobile-target-gauge"></div>
           <div class="current-gauge" id="mobile-current-gauge"></div>
@@ -36,7 +37,7 @@
           <div class="meat-current-temp-label">meat-current-temp</div>
           <div class="blower-on-label">blower-on-status</div>
         </div>
-</div>
+
         <script>
 
         var SvgScreenDeviceGenerator = function(deviceName){
@@ -115,7 +116,7 @@
             "#mobile-target-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#mobile-target-gauge", title : "Target", size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#mobile-target-gauge", title : "Cook", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -124,13 +125,13 @@
                   data : undefined
                 }, {
                   nameOfFunc : "update",
-                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"]}
+                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"]}
                 }]
             },
             "#mobile-current-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#mobile-current-gauge", title : "Current", size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#mobile-current-gauge", title : "Meat", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -139,7 +140,7 @@
                   data : undefined
                 }, {
                   nameOfFunc : "update",
-                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
+                  data : {v1 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
                 }]
             },
             "mobile-current-chart" : {
@@ -162,7 +163,7 @@
             "#tablet-target-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#tablet-target-gauge", title : "Target", size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#tablet-target-gauge", title : "Cooker", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -171,13 +172,13 @@
                   data : undefined
                 }, {
                   nameOfFunc : "update",
-                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"]}
+                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"]}
                 }]
             },
             "#tablet-current-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#tablet-current-gauge", title : "Current", size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#tablet-current-gauge", title : "Meat", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -186,7 +187,7 @@
                   data : undefined
                 }, {
                   nameOfFunc : "update",
-                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
+                  data : {v1 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
                 }]
             },
             "tablet-current-chart" : {
@@ -210,7 +211,7 @@
             "#desktop-target-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#desktop-target-gauge", title : "Target", size : 370, clipWidth : 390, clipHeight : 390}
+                  data : {container: "#desktop-target-gauge", title : "Cook", size : 370, clipWidth : 390, clipHeight : 390}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -219,13 +220,13 @@
                   data : undefined
                 }, {
                   nameOfFunc : "update",
-                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"]}
+                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"]}
                 }]
             },
             "#desktop-current-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#desktop-current-gauge", title : "Current", size : 370, clipWidth : 390, clipHeight : 390}
+                  data : {container: "#desktop-current-gauge", title : "Meat", size : 370, clipWidth : 390, clipHeight : 390}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -234,7 +235,7 @@
                   data : undefined
                 }, {
                   nameOfFunc : "update",
-                  data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
+                  data : {v1 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
                 }]
             },
             "desktop-current-chart" : {
@@ -260,4 +261,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

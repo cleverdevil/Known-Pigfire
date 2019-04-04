@@ -96,7 +96,7 @@ TempGauge.prototype.configure = function configure(config) {
 
 TempGauge.prototype.centerTranslation = function () {
   // extra 20 px for f sign
-  return "translate(" + String((this.config.clipWidth/2) + 20) + ", " + String(this.config.clipHeight/2) + ")";
+  return "translate(" + String((this.config.clipWidth/2) + 0) + ", " + String(this.config.clipHeight/2) + ")";
 //    return 'translate(' + this.config.r + ',' + this.config.r + ')';
 }
 
@@ -319,12 +319,12 @@ arcs.selectAll('path')
 
       this.config.pointer.transition()
           .duration(this.config.transitionMs)
-          .ease('elastic')
+          .ease('linear')
           .attr('transform', 'rotate(' + newAngle + ')');
 
       this.config.pointer2.transition()
           .duration(this.config.transitionMs)
-          .ease('elastic')
+          .ease('linear')
           .attr('transform', 'rotate(' + newAngle2 + ')');
     } else {
         ratio = this.config.scale(newValues.v1);
@@ -334,12 +334,12 @@ arcs.selectAll('path')
 
         this.config.pointer.transition()
             .duration(this.config.transitionMs)
-            .ease('elastic')
+            .ease('linear')
             .attr('transform', 'rotate(' + newAngle + ')');
 
         this.config.pointer2.transition()
             .duration(this.config.transitionMs)
-            .ease('elastic')
+            .ease('linear')
             .attr('transform', 'rotate(' + newAngle2 + ')');
     }
 
