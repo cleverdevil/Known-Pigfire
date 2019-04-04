@@ -35,13 +35,13 @@ font: 12px Arial;
     }
 
 
-  container-input-history .chart-visual-container path {
+  .container-input-history .chart-visual-container path {
     stroke: steelblue;
     stroke-width: 2;
     fill: none;
   }
 
-  container-input-history .chart-visual-container  {
+  .container-input-history .chart-visual-container  {
     position : relative;
 
   }
