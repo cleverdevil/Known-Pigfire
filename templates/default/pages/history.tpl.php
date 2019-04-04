@@ -147,7 +147,7 @@
             "desktop-summary-visual-container" : desktopSummaryChart
         });
 
-        d3.json(this.getId(), function(error, currentCook){
+        d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
 
         mobile.initializeOrConfigureOrUpdate({
 
