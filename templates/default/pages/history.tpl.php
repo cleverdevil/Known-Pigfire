@@ -72,7 +72,7 @@
 
         <script>
 
-        var getId = function(){
+  /*      var getId = function(){
           var srcURL = "https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/";
           var currentURL = window.location.href;
           var cookerID = currentURL.slice(currentURL.indexOf("/history/") + 10);
@@ -81,7 +81,7 @@
 
           srcURL = + cookerID + ".json";
         }
-
+*/
         var SvgScreenDeviceGenerator = function(deviceName){
           this.deviceName = deviceName;
         };
