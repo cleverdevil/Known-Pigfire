@@ -72,16 +72,8 @@
 
         <script>
 
-  /*      var getId = function(){
-          var srcURL = "https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/";
-          var currentURL = window.location.href;
-          var cookerID = currentURL.slice(currentURL.indexOf("/history/") + 10);
 
-          cookerID =
 
-          srcURL = + cookerID + ".json";
-        }
-*/
         var SvgScreenDeviceGenerator = function(deviceName){
           this.deviceName = deviceName;
         };
@@ -129,6 +121,14 @@
         var tablet = new SvgScreenDeviceGenerator("#tablet-now");
          var desktop = new SvgScreenDeviceGenerator("#desktop-now");
 
+         var getId = function(){
+           var srcURL = "https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/";
+           var currentURL = window.location.href;
+           var cookerID = currentURL.slice(currentURL.indexOf("/history/") + 10);
+
+           srcURL = srcURL + cookerID + ".json";
+         }
+
         mobile.addVisualElems({
             "mobile-current-visual-container" : mobileCurrentChart,
             "mobile-blower-bar" : mobileBlowerBar,
@@ -147,7 +147,7 @@
             "desktop-summary-visual-container" : desktopSummaryChart
         });
 
-        d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
+        d3.json(this.getId(), function(error, currentCook){
 
         mobile.initializeOrConfigureOrUpdate({
 
