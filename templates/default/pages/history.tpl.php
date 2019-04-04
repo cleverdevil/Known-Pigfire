@@ -77,7 +77,7 @@
           var currentURL = window.location.href;
           var cookerID = currentURL.slice(currentURL.indexOf("/history/") + 10);
 
-          cookerID = <?= $cook_id ?>
+          cookerID = 
 
           srcURL = + cookerID + ".json";
         }
