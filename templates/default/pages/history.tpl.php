@@ -124,7 +124,7 @@
          var getId = function(){
            var srcURL = "https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/";
 
-           var cookerID = <?= $cook_id ?>;
+           var cookerID = "<?= $cook_id ?>";
 
            srcURL = srcURL + cookerID + ".json";
          }
