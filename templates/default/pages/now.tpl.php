@@ -10,7 +10,7 @@
 
         <!-- begin imported code -->
 
-<div class="input-container">
+<div class="input-html">
         <div class="gauge-labels"><div class="current-label">Current</div><div class="meat-label">Target</div><div class="temperature-label">&#x000B0;F</div></div>
         <div id="mobile-now">
           <div class="target-gauge" id="mobile-target-gauge"></div>
