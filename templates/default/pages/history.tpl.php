@@ -127,6 +127,8 @@
            var cookerID = "<?= $cook_id ?>";
 
            srcURL = srcURL + cookerID + ".json";
+
+           return srcURL;
          }
 
         mobile.addVisualElems({
@@ -147,7 +149,7 @@
             "desktop-summary-visual-container" : desktopSummaryChart
         });
 
-        d3.json(this.getId(), function(error, currentCook){
+        d3.json(getId(), function(error, currentCook){
 
         mobile.initializeOrConfigureOrUpdate({
 
