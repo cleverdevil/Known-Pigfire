@@ -7,8 +7,6 @@
     <div>
       <div class="row">
         <h1 class="p-name">Cook Summary</h1>
-        Content goes here.
-        (<?= $cook_id ?>)
 
         <!--inputted code starts here -->
 <div class="container-input-history">
