@@ -109,6 +109,46 @@
             data : currentCook.data
           }]}
           });
+
+          tablet.initializeOrConfigureOrUpdate({
+              "#mobile-target-gauge" : {
+                  configFuncs : [{
+                    nameOfFunc : "update",
+                    data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"]}
+                  }]
+              },
+              "#mobile-current-gauge" : {
+                  configFuncs : [{
+                    nameOfFunc : "update",
+                    data : {v1 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
+                  }]
+              },
+              "mobile-current-chart" : {
+          configFuncs : [{
+            nameOfFunc : "update",
+            data : currentCook.data
+          }]}
+          });
+
+          desktop.initializeOrConfigureOrUpdate({
+              "#mobile-target-gauge" : {
+                  configFuncs : [{
+                    nameOfFunc : "update",
+                    data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"]}
+                  }]
+              },
+              "#mobile-current-gauge" : {
+                  configFuncs : [{
+                    nameOfFunc : "update",
+                    data : {v1 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
+                  }]
+              },
+              "mobile-current-chart" : {
+          configFuncs : [{
+            nameOfFunc : "update",
+            data : currentCook.data
+          }]}
+          });
         };
 
 
