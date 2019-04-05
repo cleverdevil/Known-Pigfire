@@ -106,7 +106,7 @@
               "mobile-current-chart" : {
           configFuncs : [{
             nameOfFunc : "update",
-            currentCook.data
+            data : currentCook.data
           }]}
           });
         };
