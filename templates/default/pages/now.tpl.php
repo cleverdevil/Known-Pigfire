@@ -89,6 +89,32 @@
         var tablet = new SvgScreenDeviceGenerator("tablet-now");
         var desktop = new SvgScreenDeviceGenerator("desktop-now");
 
+        var updateChart = function(currentCook){
+          mobile.initializeOrConfigureOrUpdate({
+              "#mobile-target-gauge" : {
+                  configFuncs : [{
+                    nameOfFunc : "update",
+                    data : {v1 : currentCook.data[currentCook.data.length - 1]["cooker-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["cooker-current-temp"]}
+                  }]
+              },
+              "#mobile-current-gauge" : {
+                  configFuncs : [{
+                    nameOfFunc : "update",
+                    data : {v1 : currentCook.data[currentCook.data.length - 1]["meat-target-temp"], v2 : currentCook.data[currentCook.data.length - 1]["meat-current-temp"]}
+                  }]
+              },
+              "mobile-current-chart" : {
+          configFuncs : [{
+            nameOfFunc : "update",
+            currentCook.data
+          }]}
+          });
+        };
+
+
+
+
+
         mobile.addVisualElems({
             "#mobile-target-gauge" : mobileTargetGauge,
             "#mobile-current-gauge" : mobileCurrentGauge,
@@ -111,6 +137,8 @@
         });
 
         d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
+
+
 
         mobile.initializeOrConfigureOrUpdate({
             "#mobile-target-gauge" : {
@@ -254,6 +282,16 @@
         }]}
         });
         });
+
+
+        setInterval(function(){
+
+        d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
+          updateChart(currentCook)
+        });
+
+        }, 8000);
+
         </script>
         <!-- end imported code -->
 
