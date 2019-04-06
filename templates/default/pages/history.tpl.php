@@ -12,8 +12,8 @@
 <div class="container-input-history">
 
         <div id="mobile-now">
-          <div id="mobile-summary-container">
-              <div id="mobile-summary-text-data"></div>
+          <div class="summary-container" id="mobile-summary-container">
+              <div class="summary-text-data" id="mobile-summary-text-data"></div>
               <div class="chart-visual-container" id="mobile-summary-visual-container"></div>
 
               <div class="summary-chart-labels">
@@ -35,8 +35,8 @@
         </div>
 
         <div id="tablet-now">
-          <div id="tablet-summary-container">
-              <div id="tablet-summary-text-data"></div>
+          <div class="summary-container" id="tablet-summary-container">
+              <div class="summary-text-data" id="tablet-summary-text-data"></div>
               <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
               <div class="summary-chart-labels">
                   <div class="cooker-minimum-temp-label">cooker-min-temp</div>
@@ -57,8 +57,8 @@
         </div>
 
         <div id="desktop-now">
-          <div id="desktop-summary-container">
-            <div id="desktop-summary-text-data"></div>
+          <div class="summary-container" id="desktop-summary-container">
+            <div class="summary-text-data" id="desktop-summary-text-data"></div>
               <div class="chart-visual-container" id="desktop-summary-visual-container"></div>
               <div class="summary-chart-labels">
                   <div class="cooker-minimum-temp-label">cooker-min-temp</div>
@@ -157,8 +157,7 @@
             var summaryElemsArr = [mobileSummaryText, tabletSummaryText, desktopSummaryText];
 
             for (i = 0; i < summaryElemsArr.length; ++i){
-              summaryElemsArr[i].innerHTML = '<div class="summary-text-title">SUMMARY</div>' +
-               '<div class="start-datetime-summary-text">Start Time : ' + timezoneAdjustedStartObj.toString() + '</div>' +
+              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + timezoneAdjustedStartObj.toString() + '</div>' +
                '<div class="start-datetime-summary-text">End Time : ' + timezoneAdjustedEndObj.toString() + '</div>' +
                '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div>' +
                '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div>' +

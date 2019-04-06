@@ -1,3 +1,4 @@
+
 .container-input-history {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 32px;
@@ -208,6 +209,56 @@
   font-size: 20px;
 }
 
+.container-input-history .summary-text-data {
+  color: firebrick;
+  display: inline-block;
+  vertical-align: top;
+  font-size : 20px;
+  text-align : left;
+}
+
+.container-input-history .blower-on-label {
+  color: grey;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20px;
+}
+
+.container-input-history .blower-on-label {
+  color: grey;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20px;
+}
+
+#mobile-summary-visual-container {
+  display : inline-block;
+}
+
+#tablet-summary-visual-container {
+  display : inline-block;
+}
+
+#desktop-summary-visual-container {
+  display : inline-block;
+}
+
+/*
+<div id="desktop-summary-container">
+  <div id="desktop-summary-text-data"></div>
+    <div class="chart-visual-container" id="desktop-summary-visual-container"></div>
+    <div class="summary-chart-labels">
+        <div class="cooker-minimum-temp-label">cooker-min-temp</div>
+        <div class="cooker-maximum-temp-label">cooker-max-temp</div>
+        <div class="meat-minimum-temp-label">meat-min-temp</div>
+       <div class="meat-maximum-temp-label">meat-max-temp</div>
+</div>
+</div>
+*/
+
+
+
+
 @media screen and (min-width: 660px) {
   .chart-visual-container {}
   .chart-labels {}
@@ -219,9 +270,21 @@
     display: block;
     position: relative;
   }
+
+  .summary-container {
+    text-align: center;
+  }
+
   .container-input-history #desktop-now {
     display: none;
     position: relative;
+  }
+  .container-input-history .summary-text-data {
+    color: firebrick;
+    display: inline-block;
+    vertical-align: top;
+    font-size : 22px;
+    text-align : left;
   }
 }
 
@@ -240,3 +303,11 @@
     display: block;
     position: relative;
   }
+  .container-input-history .summary-text-data {
+    color: firebrick;
+    display: inline-block;
+    vertical-align: top;
+    font-size : 25px;
+    text-align : left;
+  }
+}
