@@ -13,7 +13,7 @@
 
         <div id="mobile-now">
           <div id="mobile-summary-container">
-              <div class="mobile-summary-text-data"></div>
+              <div id="mobile-summary-text-data"></div>
               <div class="chart-visual-container" id="mobile-summary-visual-container"></div>
 
               <div class="summary-chart-labels">
@@ -36,6 +36,7 @@
 
         <div id="tablet-now">
           <div id="tablet-summary-container">
+              <div id="tablet-summary-text-data"></div>
               <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
               <div class="summary-chart-labels">
                   <div class="cooker-minimum-temp-label">cooker-min-temp</div>
@@ -57,6 +58,7 @@
 
         <div id="desktop-now">
           <div id="desktop-summary-container">
+            <div id="desktop-summary-text-data"></div>
               <div class="chart-visual-container" id="desktop-summary-visual-container"></div>
               <div class="summary-chart-labels">
                   <div class="cooker-minimum-temp-label">cooker-min-temp</div>
