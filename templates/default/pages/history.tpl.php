@@ -104,6 +104,19 @@
            }
          };
 
+         var makeLabelsVisible = function(){
+             var i;
+             var summaryLabelsArry = document.getElementsByClassName('summary-chart-labels');
+             var gaugeLabelsArry = document.getElementsByClassName('chart-labels');
+
+             for (i = 0; i < summaryLabelsArry.length; ++i){
+                 summaryLabelsArry[i].style.display = "block";
+             }
+
+             for (i = 0; i < gaugeLabelsArry.length; ++i){
+                 gaugeLabelsArry[i].style.display = "block";
+             }
+         };
 
         //create mobile
         var mobileSummaryChart = new SummaryChart();
@@ -284,6 +297,7 @@
         });
         });
 
+        makeLabelsVisible();
 
         </script>
 

@@ -9,6 +9,7 @@
 
 .container-input-history .summary-chart-labels {
   font-size: 20px;
+  display:none;
 }
 
 .container-input-history .summary-chart-labels .cooker-minimum-temp-label {
@@ -156,7 +157,7 @@
 }
 
 .container-input-history .gauge-labels {
-  display: block;
+  display: none;
 }
 
 .container-input-history .temperature-label {
