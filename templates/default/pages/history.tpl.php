@@ -295,9 +295,12 @@
         }
 
         });
-        });
 
         makeLabelsVisible();
+
+        });
+
+
 
         </script>
 
