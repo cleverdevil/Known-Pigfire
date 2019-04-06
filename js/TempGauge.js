@@ -374,7 +374,7 @@ arcs.selectAll('path')
             .attr('transform', 'rotate(' + newAngle2 + ')');
     }
 
-this.updateTempSigns();
+this.updateTempSigns(newValues);
 
 
 }
