@@ -101,6 +101,18 @@
 font-size : 30px;
 }
 
+.input-html .target-title {
+font-size : 20px;
+display: inline-block;
+color : navy;
+}
+
+.input-html .current-title {
+font-size : 20px;
+display: inline-block;
+color : steelblue;
+}
+
 .input-html .current-label {
 font-size : 20px;
 color : navy;

@@ -143,6 +143,7 @@ TempGauge.prototype.render = function (newValues) {
     var that = this;
 
     this.createTitle();
+    this.createTempSigns(newValues);
 
     this.config.svg = d3.select(this.config.container)
         .append('svg:svg')
@@ -228,6 +229,36 @@ TempGauge.prototype.createTitle = function(){
   parentElem = document.getElementById(this.config.container.slice(1));
 
   parentElem.appendChild(titleElem)
+
+}
+
+TempGauge.prototype.updateTempSigns = function(newValues){
+    this.config.targetTitle.innerHTML = newValues.v1 + "&#x000B0;F ";
+    this.config.currentTitle.innerHTML = newValues.v2 + "&#x000B0;F";
+};
+
+TempGauge.prototype.createTempSigns = function(newValues){
+  var parentElem;
+
+  titleElem = document.createElement("div");
+  titleElem.setAttribute("class", "target-title");
+  titleElem.innerHTML = newValues.v1;
+
+  parentElem = document.getElementById(this.config.container.slice(1));
+
+  parentElem.appendChild(titleElem)
+
+  this.config.targetTitle = titleElem;
+
+  titleElem = document.createElement("div");
+  titleElem.setAttribute("class", "current-title");
+  titleElem.innerHTML = newValues.v2;
+
+  parentElem = document.getElementById(this.config.container.slice(1));
+
+  parentElem.appendChild(titleElem)
+
+  this.config.currentTitle = titleElem;
 
 }
 
@@ -343,6 +374,7 @@ arcs.selectAll('path')
             .attr('transform', 'rotate(' + newAngle2 + ')');
     }
 
+this.updateTempSigns();
 
 
 }
