@@ -143,7 +143,7 @@
             var endTimeObj = new Date(cookData.summary["end-datetime"]);
             var timezoneAdjustedStartObj = new Date(startTimeObj.valueOf() - 25200000);
             var timezoneAdjustedEndObj = new Date(endTimeObj.valueOf() - 25200000);
-            var duration = cookData.summary["duration"];
+            var duration = cookData.summary["cook-duration"];
             var cookerMinimumTemp  = cookData.summary["cooker-minimum-temp"];
             var cookerMaximumTemp  = cookData.summary["cooker-maximum-temp"];
             var meatMinimumTemp  = cookData.summary["meat-minimum-temp"];
