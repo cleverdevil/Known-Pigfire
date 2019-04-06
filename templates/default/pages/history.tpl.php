@@ -144,10 +144,10 @@
             var timezoneAdjustedStartObj = new Date(startTimeObj.valueOf() - 25200000);
             var timezoneAdjustedEndObj = new Date(endTimeObj.valueOf() - 25200000);
             var duration = cookData.summary["cook-duration"];
-            var cookerMinimumTemp  = cookData.summary["cooker-minimum-temp"];
-            var cookerMaximumTemp  = cookData.summary["cooker-maximum-temp"];
-            var meatMinimumTemp  = cookData.summary["meat-minimum-temp"];
-            var meatMaximumTemp  = cookData.summary["meat-maximum-temp"];
+            var cookerMinimumTemp  = Number(cookData.summary["cooker-minimum-temp"]).toFixed(2);
+            var cookerMaximumTemp  = Number(cookData.summary["cooker-maximum-temp"]).toFixed(2);
+            var meatMinimumTemp  = Number(cookData.summary["meat-minimum-temp"]).toFixed(2);
+            var meatMaximumTemp  = Number(cookData.summary["meat-maximum-temp"]).toFixed(2);
             // subract time timeDiff
             var mobileSummaryText = document.getElementById("mobile-summary-text-data");
             var tabletSummaryText = document.getElementById("tablet-summary-text-data");
