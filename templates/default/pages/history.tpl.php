@@ -12,14 +12,18 @@
 <div class="container-input-history">
 
         <div id="mobile-now">
+          <div id="mobile-summary-container">
+              <div class="mobile-summary-text-data"></div>
+              <div class="chart-visual-container" id="mobile-summary-visual-container"></div>
 
-          <div class="chart-visual-container" id="mobile-summary-visual-container"></div>
-          <div class="summary-chart-labels">
-            <div class="cooker-minimum-temp-label">cooker-min-temp</div>
-            <div class="cooker-maximum-temp-label">cooker-max-temp</div>
-            <div class="meat-minimum-temp-label">meat-min-temp</div>
-            <div class="meat-maximum-temp-label">meat-max-temp</div>
+              <div class="summary-chart-labels">
+                  <div class="cooker-minimum-temp-label">cooker-min-temp</div>
+                  <div class="cooker-maximum-temp-label">cooker-max-temp</div>
+                  <div class="meat-minimum-temp-label">meat-min-temp</div>
+                  <div class="meat-maximum-temp-label">meat-max-temp</div>
+              </div>
           </div>
+
           <div class="chart-visual-container" id="mobile-current-visual-container"></div>
           <div class="chart-labels">
             <div class="cooker-target-temp-label">cooker-target-temp</div>
@@ -31,13 +35,16 @@
         </div>
 
         <div id="tablet-now">
-          <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
-          <div class="summary-chart-labels">
-            <div class="cooker-minimum-temp-label">cooker-min-temp</div>
-            <div class="cooker-maximum-temp-label">cooker-max-temp</div>
-            <div class="meat-minimum-temp-label">meat-min-temp</div>
-            <div class="meat-maximum-temp-label">meat-max-temp</div>
+          <div id="tablet-summary-container">
+              <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
+              <div class="summary-chart-labels">
+                  <div class="cooker-minimum-temp-label">cooker-min-temp</div>
+                  <div class="cooker-maximum-temp-label">cooker-max-temp</div>
+                  <div class="meat-minimum-temp-label">meat-min-temp</div>
+                  <div class="meat-maximum-temp-label">meat-max-temp</div>
+              </div>
           </div>
+
           <div class="chart-visual-container" id="tablet-current-visual-container"></div>
           <div class="chart-labels">
             <div class="cooker-target-temp-label">cooker-target-temp</div>
@@ -49,13 +56,15 @@
         </div>
 
         <div id="desktop-now">
-          <div class="chart-visual-container" id="desktop-summary-visual-container"></div>
-          <div class="summary-chart-labels">
-            <div class="cooker-minimum-temp-label">cooker-min-temp</div>
-            <div class="cooker-maximum-temp-label">cooker-max-temp</div>
-            <div class="meat-minimum-temp-label">meat-min-temp</div>
-            <div class="meat-maximum-temp-label">meat-max-temp</div>
+          <div id="desktop-summary-container">
+              <div class="chart-visual-container" id="desktop-summary-visual-container"></div>
+              <div class="summary-chart-labels">
+                  <div class="cooker-minimum-temp-label">cooker-min-temp</div>
+                  <div class="cooker-maximum-temp-label">cooker-max-temp</div>
+                  <div class="meat-minimum-temp-label">meat-min-temp</div>
+                 <div class="meat-maximum-temp-label">meat-max-temp</div>
           </div>
+        </div>
           <div class="chart-visual-container" id="desktop-current-visual-container"></div>
           <div class="chart-labels">
             <div class="cooker-target-temp-label">cooker-target-temp</div>
@@ -66,11 +75,7 @@
           </div>
         </div>
 
-
-
         <script>
-
-
 
         var SvgScreenDeviceGenerator = function(deviceName){
           this.deviceName = deviceName;
@@ -129,6 +134,44 @@
            return srcURL;
          }
 
+        var populateSummaryTextData = function(cookData){
+
+            var timeDiff = 25200000;
+            var startTimeObj = new Date(cookData.summary["start-datetime"]);
+            var endTimeObj = new Date(cookData.summary["end-datetime"]);
+            var timezoneAdjustedStartObj = new Date(startTimeObj.valueOf() - 25200000);
+            var timezoneAdjustedEndObj = new Date(endTimeObj.valueOf() - 25200000);
+            var duration = cookData.summary["duration"];
+            var cookerMinimumTemp  = cookData.summary["cooker-minimum-temp"];
+            var cookerMaximumTemp  = cookData.summary["cooker-maximum-temp"];
+            var meatMinimumTemp  = cookData.summary["meat-minimum-temp"];
+            var cookerMaximumTemp  = cookData.summary["meat-maximum-temp"];
+            // subract time timeDiff
+            var mobileSummaryText = document.getElementById("mobile-summary-text-data");
+            var tabletSummaryText = document.getElementById("tablet-summary-text-data");
+            var desktopSummaryText = document.getElementById("desktop-summary-text-data");
+            var i;
+
+            var summaryElemsArr = [mobileSummaryText, tabletSummaryText, desktopSummaryText];
+
+            for (i = 0; i < summaryElemsArr.length; ++i){
+              summaryElemsArr[i].innerHTML = '<div class="summary-text-title">SUMMARY</div>' +
+               '<div class="start-datetime-summary-text">Start Time : ' + timezoneAdjustedStartObj.toString() + '</div>' +
+               '<div class="start-datetime-summary-text">End Time : ' + timezoneAdjustedEndObj.toString() + '</div>' +
+               '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div>' +
+               '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div>' +
+               '<div class="start-datetime-summary-text">Cook Maximum Temp : ' + cookerMaximumTemp + '</div>' +
+               '<div class="start-datetime-summary-text">Meat Minimum Temp : ' + meatMinimumTemp + '</div>' +
+               '<div class="start-datetime-summary-text">Meat Maximum Temp : ' + meatMaximumTemp + '</div>';
+            }
+          /*
+"summary": {"id": "b5431add-dc6f-4792-ad01-3d085e738392", "start-datetime": "2019-03-13T16:40:49.783801",
+ "end-datetime": "2019-03-13T17:25:33.004230", "cook-duration": 2683, "cooker-minimum-temp": 70.44,
+"cooker-maximum-temp": 228.89999999999998, "meat-minimum-temp": 70.96, "meat-maximum-temp": 190.53999999999985}}
+          */
+
+        };
+
         mobile.addVisualElems({
             "mobile-current-visual-container" : mobileCurrentChart,
             "mobile-blower-bar" : mobileBlowerBar,
@@ -148,6 +191,8 @@
         });
 
         d3.json(getId(), function(error, currentCook){
+
+        populateSummaryTextData(currentCook);
 
         mobile.initializeOrConfigureOrUpdate({
 
@@ -200,7 +245,7 @@
         "tablet-summary-visual-container" : {
         configFuncs : [{
         nameOfFunc : "configure",
-        data : {container: "#tablet-summary-visual-container", title : "State", width : 580, xTicks : 0}
+        data : {container: "#tablet-summary-visual-container", title : "State", width : 290, xTicks : 0}
         }, {
         nameOfFunc : "render",
         data : {"v1" : currentCook.summary["cooker-minimum-temp"], "v2" : currentCook.summary["cooker-maximum-temp"], "v3" : currentCook.summary["meat-minimum-temp"], "v4" : currentCook.summary["meat-maximum-temp"]}
@@ -228,7 +273,7 @@
         "desktop-summary-visual-container" : {
         configFuncs : [{
         nameOfFunc : "configure",
-        data : {container: "#desktop-summary-visual-container", title : "State", width : 790, xTicks : 0}
+        data : {container: "#desktop-summary-visual-container", title : "State", width : 395, xTicks : 0}
         }, {
         nameOfFunc : "render",
         data : {"v1" : currentCook.summary["cooker-minimum-temp"], "v2" : currentCook.summary["cooker-maximum-temp"], "v3" : currentCook.summary["meat-minimum-temp"], "v4" : currentCook.summary["meat-maximum-temp"]}

@@ -233,8 +233,8 @@ TempGauge.prototype.createTitle = function(){
 }
 
 TempGauge.prototype.updateTempSigns = function(newValues){
-    this.config.targetTitle.innerHTML = Number(newValues.v1).toFixed(2) + "&#x000B0;F ";
-    this.config.currentTitle.innerHTML = Number(newValues.v2).toFixed(2) + "&#x000B0;F";
+    this.config.targetTitle.innerHTML = Number(newValues.v1).toFixed(2);
+    this.config.currentTitle.innerHTML = Number(newValues.v2).toFixed(2);
 };
 
 TempGauge.prototype.createTempSigns = function(){

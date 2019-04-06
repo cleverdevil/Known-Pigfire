@@ -184,7 +184,7 @@
             "#mobile-target-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#mobile-target-gauge", title : "Cook", tempSign : 0, size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#mobile-target-gauge", title : "Cook", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -199,7 +199,7 @@
             "#mobile-current-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#mobile-current-gauge", title : "Meat", tempSign : 0, size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#mobile-current-gauge", title : "Meat", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -231,7 +231,7 @@
             "#tablet-target-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#tablet-target-gauge", title : "Cooker", tempSign : 0, size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#tablet-target-gauge", title : "Cooker", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
@@ -246,7 +246,7 @@
             "#tablet-current-gauge" : {
                 configFuncs : [{
                   nameOfFunc : "configure",
-                  data : {container: "#tablet-current-gauge", title : "Meat", tempSign : 0, size : 300, clipWidth : 320, clipHeight : 320}
+                  data : {container: "#tablet-current-gauge", title : "Meat", size : 300, clipWidth : 320, clipHeight : 320}
                 }, {
                   nameOfFunc : "render",
                   data : undefined
