@@ -145,7 +145,7 @@
             var cookerMinimumTemp  = cookData.summary["cooker-minimum-temp"];
             var cookerMaximumTemp  = cookData.summary["cooker-maximum-temp"];
             var meatMinimumTemp  = cookData.summary["meat-minimum-temp"];
-            var cookerMaximumTemp  = cookData.summary["meat-maximum-temp"];
+            var meatMaximumTemp  = cookData.summary["meat-maximum-temp"];
             // subract time timeDiff
             var mobileSummaryText = document.getElementById("mobile-summary-text-data");
             var tabletSummaryText = document.getElementById("tablet-summary-text-data");
