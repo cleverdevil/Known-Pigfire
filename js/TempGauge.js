@@ -373,7 +373,7 @@ arcs.selectAll('path')
             .ease('linear')
             .attr('transform', 'rotate(' + newAngle2 + ')');
     }
-if(newValues === 0){
+if(newValues === 0 || newValues === undefined){
    return;
 }
 this.updateTempSigns(newValues);
