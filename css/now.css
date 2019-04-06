@@ -188,7 +188,7 @@ bottom : 230px;
 @media screen and (min-width: 660px){
 
 .input-html  .chart-visual-container  {
-	bottom : 100px;
+	bottom : 140px;
 }
 
 .input-html .chart-labels {
@@ -219,7 +219,7 @@ bottom : 230px;
 }
 
 .input-html .chart-labels {
-	bottom :150px}
+	bottom : 150px}
 
 .input-html #mobile-now {
 	display : none;
