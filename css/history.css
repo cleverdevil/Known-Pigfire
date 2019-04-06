@@ -6,29 +6,29 @@
   font: 12px Arial;
 }
 
-.summary-chart-labels {
+.container-input-history .summary-chart-labels {
   font-size: 20px;
 }
 
-.summary-chart-labels .cooker-minimum-temp-label {
+.container-input-history .summary-chart-labels .cooker-minimum-temp-label {
   color: green;
   display: inline-block;
   vertical-align: top;
 }
 
-.summary-chart-labels .cooker-maximum-temp-label {
+.container-input-history .summary-chart-labels .cooker-maximum-temp-label {
   color: blue;
   display: inline-block;
   vertical-align: top;
 }
 
-.summary-chart-labels .meat-minimum-temp-label {
+.container-input-history .summary-chart-labels .meat-minimum-temp-label {
   color: orange;
   display: inline-block;
   vertical-align: top;
 }
 
-.summary-chart-labels .meat-maximum-temp-label {
+.container-input-history .summary-chart-labels .meat-maximum-temp-label {
   color: red;
   display: inline-block;
   vertical-align: top;
@@ -44,132 +44,132 @@
   position: relative;
 }
 
-.path, .line {
+.container-input-history .path, .container-input-history .line {
   fill: none;
   stroke: grey;
   stroke-width: 1;
   shape-rendering: crispEdges;
 }
 
-.fahrenheitSign {
+.container-input-history .fahrenheitSign {
   color: red;
   font-size: 20px;
   float: left;
 }
 
-.legend {
+.container-input-history .legend {
   font-size: 16px;
   text-anchor: middle;
 }
 
-.target-gauge {
+.container-input-history .target-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.pointer {
+.container-input-history .pointer {
   fill: navy;
   stroke: navy;
 }
 
-.pointerTwo {
+.container-input-history .pointerTwo {
   fill: steelblue;
   stroke: steelblue;
 }
 
-.target-gauge g.label text {
+.container-input-history .target-gauge g.label text {
   text-anchor: middle;
   font-size: 18px;
   fill: black;
 }
 
-.current-gauge {
+.container-input-history .current-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
-.current-gauge g.label text {
+.container-input-history .current-gauge g.label text {
   text-anchor: middle;
   font-size: 18px;
   fill: black;
 }
 
-#mobile-target-gauge {
+.container-input-history #mobile-target-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#mobile-current-gauge {
+.container-input-history #mobile-current-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
 }
 
-#tablet-target-gauge {
+.container-input-history #tablet-target-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#tablet-current-gauge {
+.container-input-history #tablet-current-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#desktop-target-gauge {
+.container-input-history #desktop-target-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-#desktop-current-gauge {
+.container-input-history #desktop-current-gauge {
   display: inline-block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.arc-title {
+.container-input-history .arc-title {
   font-size: 30px;
 }
 
-.meat-label {
+.container-input-history .meat-label {
   font-size: 20px;
   color: navy;
 }
 
-.cooker-label {
+.container-input-history .cooker-label {
   font-size: 20px;
   color: steelblue;
 }
 
-#mobile-now {
+.container-input-history #mobile-now {
   display: inline-block;
   position: relative;
 }
 
-#tablet-now {
+.container-input-history #tablet-now {
   display: none;
   position: relative;
 }
 
-#desktop-now {
+.container-input-history #desktop-now {
   display: none;
   position: relative;
 }
 
-.gauge-labels {
+.container-input-history .gauge-labels {
   display: block;
 }
 
-.temperature-label {
+.container-input-history .temperature-label {
   font-size: 20px;
   color: red;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
-container-input-history .chart-labels {
+.container-input-history .chart-labels {
   position: relative;
   text-align: center;
 }
 
-.cooker-target-temp-label {
+.container-input-history .cooker-target-temp-label {
   color: red;
   display: inline-block;
   vertical-align: top;
@@ -177,7 +177,7 @@ container-input-history .chart-labels {
   margin-right: 10px;
 }
 
-.cooker-current-temp-label {
+.container-input-history .cooker-current-temp-label {
   color: orange;
   display: inline-block;
   vertical-align: top;
@@ -185,7 +185,7 @@ container-input-history .chart-labels {
   margin-right: 10px;
 }
 
-.meat-target-temp-label {
+.container-input-history .meat-target-temp-label {
   color: blue;
   display: inline-block;
   vertical-align: top;
@@ -193,7 +193,7 @@ container-input-history .chart-labels {
   margin-right: 10px;
 }
 
-.meat-current-temp-label {
+.container-input-history .meat-current-temp-label {
   color: green;
   display: inline-block;
   vertical-align: top;
@@ -201,7 +201,7 @@ container-input-history .chart-labels {
   margin-right: 10px;
 }
 
-.blower-on-label {
+.container-input-history .blower-on-label {
   color: grey;
   display: inline-block;
   vertical-align: top;
@@ -211,15 +211,15 @@ container-input-history .chart-labels {
 @media screen and (min-width: 660px) {
   .chart-visual-container {}
   .chart-labels {}
-  #mobile-now {
+  .container-input-history #mobile-now {
     display: block;
     position: relative;
   }
-  #tablet-now {
+  .container-input-history #tablet-now {
     display: block;
     position: relative;
   }
-  #desktop-now {
+  .container-input-history #desktop-now {
     display: none;
     position: relative;
   }
@@ -228,15 +228,15 @@ container-input-history .chart-labels {
 @media screen and (min-width: 1024px) {
   .chart-visual-container {}
   .chart-labels {}
-  #mobile-now {
+  .container-input-history #mobile-now {
     display: none;
     position: relative;
   }
-  #tablet-now {
+  .container-input-history #tablet-now {
     display: none;
     position: relative;
   }
-  #desktop-now {
+  .container-input-history #desktop-now {
     display: block;
     position: relative;
   }

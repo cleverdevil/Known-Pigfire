@@ -16,121 +16,121 @@
 	bottom : 250px;
 }
 
-.axis path,
-.axis line {
+.input-html .axis path,
+.input-html .axis line {
 	fill: none;
 	stroke: grey;
 	stroke-width: 1;
 	shape-rendering: crispEdges;
 }
 
-.legend {
+.input-html .legend {
 	font-size: 16px;
 	font-weight: bold;
 	text-anchor: middle;
 }
 
-.target-gauge {
+.input-html .target-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.pointer {
+.input-html .pointer {
 	fill: navy;
 	stroke: navy;
 }
 
-.pointerTwo {
+.input-html .pointerTwo {
 	fill: steelblue;
 	stroke: steelblue;
 }
 
-.target-gauge g.label text {
+.input-html .target-gauge g.label text {
 	text-anchor: middle;
 	font-size: 18px;
 	font-weight: bold;
 	fill: black;
 }
 
-.current-gauge {
+.input-html .current-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 
-.current-gauge g.label text {
+.input-html .current-gauge g.label text {
 	text-anchor: middle;
 	font-size: 18px;
 	font-weight: bold;
 	fill: black;
 }
 
-#mobile-target-gauge {
+.input-html #mobile-target-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 
-#mobile-current-gauge {
+.input-html #mobile-current-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 	position : relative;
 	bottom : 120px;
 }
 
-#tablet-target-gauge {
+.input-html #tablet-target-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#tablet-current-gauge {
+.input-html #tablet-current-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#desktop-target-gauge {
+.input-html #desktop-target-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#desktop-current-gauge {
+.input-html #desktop-current-gauge {
 	display : inline-block;
 	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.arc-title {
+.input-html .arc-title {
 font-size : 30px;
 }
 
-.current-label {
+.input-html .current-label {
 font-size : 20px;
 color : navy;
 }
 
-.meat-label {
+.input-html .meat-label {
 font-size : 20px;
 color : steelblue;
 }
 
-#mobile-now {
+.input-html #mobile-now {
 	display : inline-block;
 	position : relative;
 }
 
-#tablet-now {
+.input-html #tablet-now {
 	display : none;
 	position : relative;
 }
 
-#desktop-now {
+.input-html #desktop-now {
 	display : none;
 	position : relative;
 }
 
-.gauge-labels {
+.input-html .gauge-labels {
 	display : block;
 }
 
-.temperature-label {
+.input-html .temperature-label {
 	font-size : 20px;
 	color : red;
 	font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -142,7 +142,7 @@ text-align : center;
 bottom : 250px;
 }
 
-.cooker-target-temp-label {
+.input-html .cooker-target-temp-label {
 		color : red;
 		display : inline-block;
 		vertical-align: top;
@@ -151,7 +151,7 @@ bottom : 250px;
 		margin-right : 10px;
 }
 
-.cooker-current-temp-label {
+.input-html .cooker-current-temp-label {
 	color : orange;
 	display : inline-block;
 	vertical-align: top;
@@ -160,7 +160,7 @@ bottom : 250px;
 	margin-right : 10px;
 }
 
-.meat-target-temp-label {
+.input-html .meat-target-temp-label {
 	color : blue;
 	display : inline-block;
 	vertical-align: top;
@@ -169,7 +169,7 @@ bottom : 250px;
 	margin-right : 10px;
 }
 
-.meat-current-temp-label {
+.input-html .meat-current-temp-label {
 	color : green;
 	display : inline-block;
 	vertical-align: top;
@@ -178,11 +178,10 @@ bottom : 250px;
 	margin-right : 10px;
 }
 
-.blower-on-label {
+.input-html .blower-on-label {
 	color : grey;
 	display : inline-block;
 	vertical-align: top;
-	
 	font-size : 20px;
 }
 
@@ -197,17 +196,17 @@ bottom : 250px;
 }
 
 
-#mobile-now {
+.input-html #mobile-now {
 	display : none;
 	position : relative;
 }
 
-#tablet-now {
+.input-html #tablet-now {
 	display : block;
 	position : relative;
 }
 
-#desktop-now {
+.input-html #desktop-now {
 	display : none;
 	position : relative;
 }
@@ -223,17 +222,17 @@ bottom : 250px;
 	bottom : 210px;
 }
 
-#mobile-now {
+.input-html #mobile-now {
 	display : none;
 	position : relative;
 }
 
-#tablet-now {
+.input-html#tablet-now {
 	display : none;
 	position : relative;
 }
 
-#desktop-now {
+.input-html #desktop-now {
 	display : block;
 	position : relative;
 }
