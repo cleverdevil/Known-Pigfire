@@ -143,7 +143,7 @@ TempGauge.prototype.render = function (newValues) {
     var that = this;
 
     this.createTitle();
-    this.createTempSigns(newValues);
+    this.createTempSigns();
 
     this.config.svg = d3.select(this.config.container)
         .append('svg:svg')
@@ -237,12 +237,12 @@ TempGauge.prototype.updateTempSigns = function(newValues){
     this.config.currentTitle.innerHTML = newValues.v2 + "&#x000B0;F";
 };
 
-TempGauge.prototype.createTempSigns = function(newValues){
+TempGauge.prototype.createTempSigns = function(){
   var parentElem;
 
   titleElem = document.createElement("div");
   titleElem.setAttribute("class", "target-title");
-  titleElem.innerHTML = newValues.v1;
+
 
   parentElem = document.getElementById(this.config.container.slice(1));
 
@@ -252,7 +252,7 @@ TempGauge.prototype.createTempSigns = function(newValues){
 
   titleElem = document.createElement("div");
   titleElem.setAttribute("class", "current-title");
-  titleElem.innerHTML = newValues.v2;
+
 
   parentElem = document.getElementById(this.config.container.slice(1));
 
