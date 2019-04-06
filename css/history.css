@@ -216,6 +216,7 @@
   font-size : 14px;
   text-align : left;
   width : 250px;
+  margin-top : 20px;
 }
 
 .container-input-history .blower-on-label {
@@ -290,6 +291,7 @@
     font-size : 14px;
     text-align : left;
     width : 300px;
+    margin-top : 20px;
   }
 }
 
@@ -315,5 +317,6 @@
     font-size : 14px;
     text-align : left;
     width : 300px;
+    margin-top : 20px;
   }
 }

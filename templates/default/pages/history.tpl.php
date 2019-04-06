@@ -163,7 +163,7 @@
                '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div><br>' +
                '<div class="start-datetime-summary-text">Cook Maximum Temp : ' + cookerMaximumTemp + '</div><br>' +
                '<div class="start-datetime-summary-text">Meat Minimum Temp : ' + meatMinimumTemp + '</div><br>' +
-               '<div class="start-datetime-summary-text">Meat Maximum Temp : ' + meatMaximumTemp + '</div><br>';
+               '<div class="start-datetime-summary-text">Meat Maximum Temp : ' + meatMaximumTemp + '</div>';
             }
           /*
 "summary": {"id": "b5431add-dc6f-4792-ad01-3d085e738392", "start-datetime": "2019-03-13T16:40:49.783801",
