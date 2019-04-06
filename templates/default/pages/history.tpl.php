@@ -157,13 +157,13 @@
             var summaryElemsArr = [mobileSummaryText, tabletSummaryText, desktopSummaryText];
 
             for (i = 0; i < summaryElemsArr.length; ++i){
-              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + timezoneAdjustedStartObj.toString() + '</div>' +
-               '<div class="start-datetime-summary-text">End Time : ' + timezoneAdjustedEndObj.toString() + '</div>' +
-               '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div>' +
-               '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div>' +
-               '<div class="start-datetime-summary-text">Cook Maximum Temp : ' + cookerMaximumTemp + '</div>' +
-               '<div class="start-datetime-summary-text">Meat Minimum Temp : ' + meatMinimumTemp + '</div>' +
-               '<div class="start-datetime-summary-text">Meat Maximum Temp : ' + meatMaximumTemp + '</div>';
+              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + timezoneAdjustedStartObj.toString() + '</div><br>' +
+               '<div class="start-datetime-summary-text">End Time : ' + timezoneAdjustedEndObj.toString() + '</div><br>' +
+               '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div><br>' +
+               '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div><br>' +
+               '<div class="start-datetime-summary-text">Cook Maximum Temp : ' + cookerMaximumTemp + '</div><br>' +
+               '<div class="start-datetime-summary-text">Meat Minimum Temp : ' + meatMinimumTemp + '</div><br>' +
+               '<div class="start-datetime-summary-text">Meat Maximum Temp : ' + meatMaximumTemp + '</div><br>';
             }
           /*
 "summary": {"id": "b5431add-dc6f-4792-ad01-3d085e738392", "start-datetime": "2019-03-13T16:40:49.783801",
