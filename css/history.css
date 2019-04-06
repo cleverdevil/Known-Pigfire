@@ -156,9 +156,6 @@
   position: relative;
 }
 
-.container-input-history .gauge-labels {
-  display: none;
-}
 
 .container-input-history .temperature-label {
   font-size: 20px;
@@ -169,6 +166,7 @@
 .container-input-history .chart-labels {
   position: relative;
   text-align: center;
+  display : none;
 }
 
 .container-input-history .cooker-target-temp-label {
