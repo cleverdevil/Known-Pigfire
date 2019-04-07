@@ -267,7 +267,7 @@
   .chart-visual-container {}
   .chart-labels {}
   .container-input-history #mobile-now {
-    display: block;
+    display: none;
     position: relative;
   }
   .container-input-history #tablet-now {
