@@ -137,7 +137,7 @@ color : steelblue;
 }
 
 .input-html .gauge-labels {
-	display : block;
+	display : none;
 }
 
 .input-html .temperature-label {
@@ -150,6 +150,7 @@ color : steelblue;
 	position : relative;
 text-align : center;
 bottom : 230px;
+display : none;
 }
 
 .input-html .cooker-target-temp-label {
@@ -203,6 +204,7 @@ bottom : 230px;
 
 .input-html .chart-labels {
 	bottom : 130px;
+	display : none;
 }
 
 
@@ -229,7 +231,9 @@ bottom : 230px;
 }
 
 .input-html .chart-labels {
-	bottom : 150px}
+	bottom : 150px;
+	display : none;
+}
 
 .input-html #mobile-now {
 	display : none;

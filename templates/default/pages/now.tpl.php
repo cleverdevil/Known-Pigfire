@@ -89,6 +89,20 @@
         var tablet = new SvgScreenDeviceGenerator("tablet-now");
         var desktop = new SvgScreenDeviceGenerator("desktop-now");
 
+        var makeLabelsVisible = function(){
+            var i;
+            var gaugeLabelsArry = document.getElementsByClassName('gauge-labels');
+            var chartLabelsArry = document.getElementsByClassName('chart-labels');
+
+            for (i = 0; i < gaugeLabelsArry.length; ++i){
+                gaugeLabelsArry[i].style.display = "block";
+            }
+
+            for (i = 0; i < chartLabelsArry.length; ++i){
+                chartLabelsArry[i].style.display = "block";
+            }
+        };
+
         var updateChart = function(currentCook){
           mobile.initializeOrConfigureOrUpdate({
               "#mobile-target-gauge" : {
@@ -328,6 +342,7 @@
 
         d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
           updateChart(currentCook)
+          makeLabelsVisible();
         });
 
         }, 8000);
