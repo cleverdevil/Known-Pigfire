@@ -335,6 +335,9 @@
         data : undefined
         }]}
         });
+
+        makeLabelsVisible();
+
         });
 
 
@@ -342,7 +345,6 @@
 
         d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
           updateChart(currentCook)
-          makeLabelsVisible();
         });
 
         }, 8000);
