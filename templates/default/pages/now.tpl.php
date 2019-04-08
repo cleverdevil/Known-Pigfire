@@ -11,7 +11,7 @@
         <!-- begin imported code -->
 
 <div class="input-html">
-        <div class="gauge-labels"><div class="current-label">Current</div><div class="meat-label">Target</div><div class="temperature-label">&#x000B0;F</div></div>
+        <div class="gauge-labels"><div class="temperature-label">Current</div><div class="current-label">Target</div><div class="temperature-label">&#x000B0;F</div></div>
         <div id="mobile-now">
           <div class="target-gauge" id="mobile-target-gauge"></div>
           <div class="current-gauge" id="mobile-current-gauge"></div>
@@ -69,19 +69,19 @@
         //create mobile
         var mobileTargetGauge = new TempGauge('#mobile-target-gauge');
         var mobileCurrentGauge = new TempGauge('#mobile-current-gauge');
-        var mobileBlowerBar = new Bar("silver", 250);
+        var mobileBlowerBar = new Bar("grey", 250);
         var mobileCurrentChart = new Chart(mobileBlowerBar);
 
         //create tablet
         var tabletTargetGauge = new TempGauge('#tablet-target-gauge');
         var tabletCurrentGauge = new TempGauge('#tablet-current-gauge');
-        var tabletBlowerBar = new Bar("silver", 300);
+        var tabletBlowerBar = new Bar("grey", 300);
         var tabletCurrentChart = new Chart(tabletBlowerBar);
 
         //create desktop
         var desktopTargetGauge = new TempGauge('#desktop-target-gauge');
         var desktopCurrentGauge = new TempGauge('#desktop-current-gauge');
-        var desktopBlowerBar = new Bar("silver", 300);
+        var desktopBlowerBar = new Bar("grey", 300);
         var desktopCurrentChart = new Chart(desktopBlowerBar);
 
         // add each to screen
@@ -121,6 +121,11 @@
           configFuncs : [{
             nameOfFunc : "update",
             data : currentCook.data
+          }]},
+          "tablet-blower-bar" : {
+          configFuncs : [{
+          nameOfFunc : "createCharts",
+          data : undefined
           }]}
           });
 
@@ -141,6 +146,11 @@
           configFuncs : [{
             nameOfFunc : "update",
             data : currentCook.data
+          }]},
+          "tablet-blower-bar" : {
+          configFuncs : [{
+          nameOfFunc : "createCharts",
+          data : undefined
           }]}
           });
 
@@ -161,6 +171,11 @@
           configFuncs : [{
             nameOfFunc : "update",
             data : currentCook.data
+          }]},
+          "tablet-blower-bar" : {
+          configFuncs : [{
+          nameOfFunc : "createCharts",
+          data : undefined
           }]}
           });
         };

@@ -217,9 +217,10 @@ var Chart = function (bar) {
   var maxMeatCurrentTemp = d3.max(data, function (d) { return d["meat-current-temp"]; });
   // Make the changes
 
+     //last argument is set to true to redraw bars
       svg.select("#cooker-target-temp")   // change the line
           .duration(750)
-          .attr("d", this.lineProcessorGenerator(data, "cooker-target-temp", this, false));
+          .attr("d", this.lineProcessorGenerator(data, "cooker-target-temp", this, true));
 
       svg.select("#cooker-current-temp")   // change the line
           .duration(750)
