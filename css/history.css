@@ -26,8 +26,7 @@
 .container-input-history .summary-chart-labels {
   font-size: 17px;
   display:none;
-  text-align: right;
-  position :relative;
+  text-align: center;
   left: 35px;
 }
 
@@ -226,7 +225,7 @@
   vertical-align: top;
   font-size: 20px;
 }
-
+/*edit here*/
 .container-input-history .summary-text-data {
   color: black;
   display: inline-block;
@@ -234,7 +233,7 @@
   font-size : 14px;
   text-align : left;
   width : 250px;
-  margin: 20px 75px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 .container-input-history .blower-on-label {
@@ -345,4 +344,23 @@
   .container-input-history .summary-text-data {
     font-size : 15px;
   }
+
+  .container-input-history .summary-chart-labels {
+    font-size: 17px;
+    display:none;
+    text-align: right;
+    position :relative;
+    left: 35px;
+  }
+
+  .container-input-history .summary-text-data {
+    color: black;
+    display: inline-block;
+    vertical-align: top;
+    font-size : 14px;
+    text-align : left;
+    width : 250px;
+    margin: 20px 75px 0px 0px;
+  }
+
 }
