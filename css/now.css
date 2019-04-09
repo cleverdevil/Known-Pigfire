@@ -111,12 +111,12 @@ font-size : 20px;
 color : steelblue;
 }
 
-.input-html .current-label {
+.input-html .target-label {
 font-size : 20px;
 color : navy;
 }
 
-.input-html .meat-label {
+.input-html .current-label {
 font-size : 20px;
 color : steelblue;
 }

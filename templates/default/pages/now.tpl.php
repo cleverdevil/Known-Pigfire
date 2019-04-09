@@ -11,7 +11,7 @@
         <!-- begin imported code -->
 
 <div class="input-html">
-        <div class="gauge-labels"><div class="temperature-label">Current</div><div class="current-label">Target</div><div class="temperature-label">&#x000B0;F</div></div>
+        <div class="gauge-labels"><div class="target-label">Target</div><div class="current-label">Current</div><div class="temperature-label">&#x000B0;F</div></div>
         <div id="mobile-now">
           <div class="target-gauge" id="mobile-target-gauge"></div>
           <div class="current-gauge" id="mobile-current-gauge"></div>
@@ -180,10 +180,6 @@
           });
         };
 
-
-
-
-
         mobile.addVisualElems({
             "#mobile-target-gauge" : mobileTargetGauge,
             "#mobile-current-gauge" : mobileCurrentGauge,
@@ -206,8 +202,6 @@
         });
 
         d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
-
-
 
         mobile.initializeOrConfigureOrUpdate({
             "#mobile-target-gauge" : {
