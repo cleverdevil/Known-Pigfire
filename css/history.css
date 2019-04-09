@@ -3,9 +3,15 @@
   width: 100%;
 }
 
-.container-input-history th, .container-input-history td {
+.container-input-history td {
   padding: 8px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.container-input-history th {
+  padding: 8px;
+  text-align: right;
   border-bottom: 1px solid #ddd;
 }
 
@@ -16,7 +22,7 @@
   margin: 0;
   font: 12px Arial;
 }
-
+/*edit here*/
 .container-input-history .summary-chart-labels {
   font-size: 17px;
   display:none;
@@ -228,7 +234,7 @@
   font-size : 14px;
   text-align : left;
   width : 250px;
-  margin-top : 20px;
+  margin: 20px 75px 0px 0px;
 }
 
 .container-input-history .blower-on-label {
