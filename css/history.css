@@ -18,8 +18,11 @@
 }
 
 .container-input-history .summary-chart-labels {
-  font-size: 20px;
+  font-size: 17px;
   display:none;
+  text-align: right;
+  position :relative;
+  left: 35px;
 }
 
 .container-input-history .summary-chart-labels .cooker-minimum-temp-label {
@@ -287,6 +290,7 @@
 
   .summary-container {
     text-align: center;
+    display: inline-block;
   }
 
   .container-input-history #desktop-now {
@@ -301,6 +305,10 @@
     text-align : left;
     width : 300px;
     margin-top : 20px;
+  }
+
+  .container-input-history .summary-text-data {
+    font-size : 15px;
   }
 }
 
@@ -327,5 +335,8 @@
     text-align : left;
     width : 300px;
     margin-top : 20px;
+  }
+  .container-input-history .summary-text-data {
+    font-size : 15px;
   }
 }

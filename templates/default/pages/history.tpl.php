@@ -238,11 +238,11 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
             for (i = 0; i < summaryElemsArr.length; ++i){
               summaryElemsArr[i].innerHTML =  '<table><tr><th>Start Time</th><td>'+this.formatString(timeAdjustedObj['timezoneAdjustedStartObj'])+'<td></tr>' +
               '<tr><th>End Time</th><td>'+this.formatString(timeAdjustedObj['timezoneAdjustedEndObj'])+'<td></tr>' +
-              '<tr><th>End Time</th><td>'+duration+'<td></tr>' +
-              '<tr><th>End Time</th><td>'+cookerMinimumTemp+'<td></tr>' +
-              '<tr><th>End Time</th><td>'+cookerMaximumTemp+'<td></tr>' +
-              '<tr><th>End Time</th><td>'+meatMinimumTemp+'<td></tr>' +
-              '<tr><th>End Time</th><td>'+meatMaximumTemp+'<td></tr>' + '</table>';
+              '<tr><th>Duration</th><td>'+duration+'<td></tr>' +
+              '<tr><th>Cooker Minimum Temp</th><td>'+cookerMinimumTemp+'<td></tr>' +
+              '<tr><th>Cooker Maximum Temp</th><td>'+cookerMaximumTemp+'<td></tr>' +
+              '<tr><th>Meat Minimum Temp</th><td>'+meatMinimumTemp+'<td></tr>' +
+              '<tr><th>Meat Maximum Temp</th><td>'+meatMaximumTemp+'<td></tr>' + '</table>';
             }
 
 
