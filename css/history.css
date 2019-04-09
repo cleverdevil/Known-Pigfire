@@ -185,13 +185,13 @@
   position: relative;
   text-align: center;
   display : none;
+  font-size: 17px;
 }
 
 .container-input-history .cooker-target-temp-label {
   color: red;
   display: inline-block;
   vertical-align: top;
-  font-size: 20px;
   margin-right: 10px;
 }
 
@@ -199,7 +199,6 @@
   color: orange;
   display: inline-block;
   vertical-align: top;
-  font-size: 20px;
   margin-right: 10px;
 }
 
@@ -207,7 +206,6 @@
   color: blue;
   display: inline-block;
   vertical-align: top;
-  font-size: 20px;
   margin-right: 10px;
 }
 
@@ -215,7 +213,6 @@
   color: green;
   display: inline-block;
   vertical-align: top;
-  font-size: 20px;
   margin-right: 10px;
 }
 
@@ -281,7 +278,7 @@
 
 
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 711px) {
   .chart-visual-container {}
   .chart-labels {}
   .container-input-history #mobile-now {
@@ -361,6 +358,10 @@
     text-align : left;
     width : 250px;
     margin: 20px 75px 0px 0px;
+  }
+
+  .container-input-history .chart-labels {
+    font-size : 20px;
   }
 
 }
