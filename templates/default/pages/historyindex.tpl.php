@@ -8,6 +8,10 @@ $local = new DateTimeZone('America/Los_Angeles');
     <div>
       <div class="row">
         <h1 class="p-name">Cook History</h1>
+        <p>
+          Below is a list of all historical cooks that were actively tracked
+          with the new tracking system. Click on a cook to view analytics.
+        </p>
         <ul>
           <?php
           foreach ($cooks as $cook) {

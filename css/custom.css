@@ -1,5 +1,15 @@
-
-
 h1 {
   text-align : center;
+}
+
+
+div.history-index {
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+div.history-index ul {
+  margin: 0 auto 0 auto;
+  text-align: left;
+  width: 240px;
 }
