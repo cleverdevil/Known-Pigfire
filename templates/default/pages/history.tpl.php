@@ -221,7 +221,6 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
 
         var populateSummaryTextData = function(cookData){
 
-
             var duration = cookData.summary["cook-duration"];
             var cookerMinimumTemp  = Number(cookData.summary["cooker-minimum-temp"]).toFixed(2);
             var cookerMaximumTemp  = Number(cookData.summary["cooker-maximum-temp"]).toFixed(2);
@@ -237,15 +236,53 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
             var summaryElemsArr = [mobileSummaryText, tabletSummaryText, desktopSummaryText];
 
             for (i = 0; i < summaryElemsArr.length; ++i){
-              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + this.formatString(timeAdjustedObj['timezoneAdjustedStartObj']) + '</div><br>' +
-               '<div class="start-datetime-summary-text">End Time : ' + this.formatString(timeAdjustedObj['timezoneAdjustedEndObj'])+ '</div><br>' +
-               '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div><br>' +
-               '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div><br>' +
-               '<div class="start-datetime-summary-text">Cook Maximum Temp : ' + cookerMaximumTemp + '</div><br>' +
-               '<div class="start-datetime-summary-text">Meat Minimum Temp : ' + meatMinimumTemp + '</div><br>' +
-               '<div class="start-datetime-summary-text">Meat Maximum Temp : ' + meatMaximumTemp + '</div>';
+              summaryElemsArr[i].innerHTML =  '<table><tr><th>Start Time</th><td>'+this.formatString(timeAdjustedObj['timezoneAdjustedStartObj'])+'<td></tr>' +
+              '<tr><th>End Time</th><td>'+this.formatString(timeAdjustedObj['timezoneAdjustedEndObj'])+'<td></tr>' +
+              '<tr><th>End Time</th><td>'+duration+'<td></tr>' +
+              '<tr><th>End Time</th><td>'+cookerMinimumTemp+'<td></tr>' +
+              '<tr><th>End Time</th><td>'+cookerMaximumTemp+'<td></tr>' +
+              '<tr><th>End Time</th><td>'+meatMinimumTemp+'<td></tr>' +
+              '<tr><th>End Time</th><td>'+meatMaximumTemp+'<td></tr>' + '</table>';
             }
+
+
           /*
+
+          <table>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+            <th>Savings</th>
+            </tr>
+            <tr>
+              <td>Peter</td>
+              <td>Griffin</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>Lois</td>
+              <td>Griffin</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+              <td>Joe</td>
+              <td>Swanson</td>
+              <td>$300</td>
+            </tr>
+            <tr>
+              <td>Cleveland</td>
+              <td>Brown</td>
+              <td>$250</td>
+            </tr>
+          </table>
+
+
+
+
+
+
+
+
 "summary": {"id": "b5431add-dc6f-4792-ad01-3d085e738392", "start-datetime": "2019-03-13T16:40:49.783801",
  "end-datetime": "2019-03-13T17:25:33.004230", "cook-duration": 2683, "cooker-minimum-temp": 70.44,
 "cooker-maximum-temp": 228.89999999999998, "meat-minimum-temp": 70.96, "meat-maximum-temp": 190.53999999999985}}
