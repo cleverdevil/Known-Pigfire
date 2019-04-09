@@ -149,19 +149,40 @@
            return srcURL;
          }
 
+         var getTimeZoneOffsetForCook = function(cookData){
+           //get 7 hours in miliseconds
+           var timeDiff = 25200000;
+           var startTimeObj = new Date(cookData.summary["start-datetime"]);
+           var endTimeObj = new Date(cookData.summary["end-datetime"]);
+           var timezoneAdjustedStartObj = new Date(startTimeObj.valueOf() - 25200000);
+           var timezoneAdjustedEndObj = new Date(endTimeObj.valueOf() - 25200000);
+
+           return {
+             timezoneAdjustedStartObj : timezoneAdjustedStartObj,
+             timezoneAdjustedEndObj : timezoneAdjustedEndObj
+           };
+         };
+
+         var formatString = function(timestringToFormat){
+             //March 13, 2019 - 8:42 AM
+             //Wed Mar 13 2019 08:41:31 GMT-0700 (Pacific Daylight Time)
+             var newTimestringToFormat = {};
+
+             
+
+
+         };
+
         var populateSummaryTextData = function(cookData){
 
-            var timeDiff = 25200000;
-            var startTimeObj = new Date(cookData.summary["start-datetime"]);
-            var endTimeObj = new Date(cookData.summary["end-datetime"]);
-            var timezoneAdjustedStartObj = new Date(startTimeObj.valueOf() - 25200000);
-            var timezoneAdjustedEndObj = new Date(endTimeObj.valueOf() - 25200000);
+
             var duration = cookData.summary["cook-duration"];
             var cookerMinimumTemp  = Number(cookData.summary["cooker-minimum-temp"]).toFixed(2);
             var cookerMaximumTemp  = Number(cookData.summary["cooker-maximum-temp"]).toFixed(2);
             var meatMinimumTemp  = Number(cookData.summary["meat-minimum-temp"]).toFixed(2);
             var meatMaximumTemp  = Number(cookData.summary["meat-maximum-temp"]).toFixed(2);
             // subract time timeDiff
+            var timeAdjustedObj = this.getTimeZoneOffsetForCook(cookData);
             var mobileSummaryText = document.getElementById("mobile-summary-text-data");
             var tabletSummaryText = document.getElementById("tablet-summary-text-data");
             var desktopSummaryText = document.getElementById("desktop-summary-text-data");
@@ -170,7 +191,7 @@
             var summaryElemsArr = [mobileSummaryText, tabletSummaryText, desktopSummaryText];
 
             for (i = 0; i < summaryElemsArr.length; ++i){
-              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + timezoneAdjustedStartObj.toString() + '</div><br>' +
+              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + timeAdjustedObj['timezoneAdjustedStartObj'] + '</div><br>' +
                '<div class="start-datetime-summary-text">End Time : ' + timezoneAdjustedEndObj.toString() + '</div><br>' +
                '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div><br>' +
                '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div><br>' +
