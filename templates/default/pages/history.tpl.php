@@ -163,14 +163,60 @@
            };
          };
 
-         var formatString = function(timestringToFormat){
-             //March 13, 2019 - 8:42 AM
-             //Wed Mar 13 2019 08:41:31 GMT-0700 (Pacific Daylight Time)
-             var newTimestringToFormat = {};
-
-             
+         var formatString = function(dateObj){
 
 
+var months = {
+0 : 'January',
+1 : 'February',
+2 : 'March',
+3: 'April',
+4 : 'May',
+5 : 'June',
+6 : 'July',
+7 : 'August',
+8 : 'Septemeber',
+9 : 'October',
+10 : 'November',
+11 : 'December'
+};
+
+var hours = {
+
+    0 : ['12', 'AM'],
+    1 : ['1', 'AM'],
+    2 : ['2', 'AM'],
+    3 : ['3', 'AM'],
+    4 : ['4', 'AM'],
+    5 : ['5', 'AM'],
+    6 : ['6', 'AM'],
+    7 : ['7', 'AM'],
+    8 : ['8', 'AM'],
+    9 : ['9', 'AM'],
+    10 : ['10', 'AM'],
+    11 : ['11', 'AM'],
+    12 : ['12', 'PM'],
+    13 : ['1', 'PM'],
+    14 : ['2', 'PM'],
+    15 : ['3', 'PM'],
+    16 : ['4', 'PM'],
+    17 : ['5', 'PM'],
+    18 : ['6', 'PM'],
+    19 : ['7', 'PM'],
+    20 : ['8', 'PM'],
+    21 : ['9', 'PM'],
+    22 : ['10', 'PM'],
+    23 : ['11', 'PM'],
+};
+
+
+var month = months[String(dateObj.getMonth())];
+var date = String(dateObj.getDate());
+var year = String(dateObj.getFullYear());
+var hoursArry = hours[String(dateObj.getHours())];
+var minutes = dateObj.getMinutes();
+
+return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes + ' ' + hoursArry[1]);
          };
 
         var populateSummaryTextData = function(cookData){
@@ -191,8 +237,8 @@
             var summaryElemsArr = [mobileSummaryText, tabletSummaryText, desktopSummaryText];
 
             for (i = 0; i < summaryElemsArr.length; ++i){
-              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + timeAdjustedObj['timezoneAdjustedStartObj'] + '</div><br>' +
-               '<div class="start-datetime-summary-text">End Time : ' + timezoneAdjustedEndObj.toString() + '</div><br>' +
+              summaryElemsArr[i].innerHTML =  '<div class="start-datetime-summary-text">Start Time : ' + this.formatString(timeAdjustedObj['timezoneAdjustedStartObj']) + '</div><br>' +
+               '<div class="start-datetime-summary-text">End Time : ' + this.formatString(timeAdjustedObj['timezoneAdjustedEndObj'])+ '</div><br>' +
                '<div class="start-datetime-summary-text">Duration : ' + duration + ' Seconds</div><br>' +
                '<div class="start-datetime-summary-text">Cook Minimum Temp : ' + cookerMinimumTemp + '</div><br>' +
                '<div class="start-datetime-summary-text">Cook Maximum Temp : ' + cookerMaximumTemp + '</div><br>' +
