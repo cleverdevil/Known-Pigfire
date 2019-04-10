@@ -140,14 +140,11 @@ correctTimeForCurrentChart(currentCook);
             nameOfFunc : "update",
             data : currentCook.data
           }]},
-          //,
-        /*  "tablet-blower-bar" : {
+          "mobile-blower-bar" : {
           configFuncs : [{
           nameOfFunc : "createCharts",
           data : undefined
           }]}
-
-          */
           });
 
           tablet.initializeOrConfigureOrUpdate({
@@ -167,14 +164,12 @@ correctTimeForCurrentChart(currentCook);
           configFuncs : [{
             nameOfFunc : "update",
             data : currentCook.data
-          }]}//,
-        /*  "tablet-blower-bar" : {
+          }]},
+          "tablet-blower-bar" : {
           configFuncs : [{
           nameOfFunc : "createCharts",
           data : undefined
           }]}
-
-          */
           });
 
           desktop.initializeOrConfigureOrUpdate({
@@ -194,14 +189,12 @@ correctTimeForCurrentChart(currentCook);
           configFuncs : [{
             nameOfFunc : "update",
             data : currentCook.data
-          }]}//,
-        /*  "tablet-blower-bar" : {
+          }]},
+          "desktop-blower-bar" : {
           configFuncs : [{
           nameOfFunc : "createCharts",
           data : undefined
           }]}
-
-          */
           });
         };
 
