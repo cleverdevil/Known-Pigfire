@@ -156,6 +156,16 @@ var Chart = function (bar) {
                  .html("&#176;F")
         };
 
+Chart.prototype.adjustTime = function (dateObj) {
+
+          //get 7 hours in miliseconds
+          var timeDiff = 25200000;
+          var newTimeObj = new Date(dateObj.valueOf() - timeDiff);
+
+          return newTimeObj;
+
+};
+
         Chart.prototype.createFirst = function (data) {
 
             var that = this;
@@ -164,7 +174,10 @@ var Chart = function (bar) {
 
             data.forEach(function (d) {
                 d.datetime = that.config.parseDate(d.datetime);
+                d.datetime = this.adjustTime(d.datetime);
             });
+
+
 
             // Scale the range of the data
             this.config.x.domain(d3.extent(data, function (d) { return d.datetime; }));
@@ -211,6 +224,7 @@ var Chart = function (bar) {
 
           data.forEach(function (d) {
               d.datetime = that.config.parseDate(d.datetime);
+              d.datetime = this.adjustTime(d.datetime);
           });
 
           // Scale the range of the data
