@@ -146,7 +146,15 @@ var Chart = function (bar) {
             }
         };
 
-
+        Chart.prototype.createFSign = function(){
+          this.config.svg.append("text")
+                 .attr("transform", "translate(-50,0)")
+                 .attr("x", 0)
+                 .attr("y", this.config.height/2 )
+                 .attr("font-size", "20px")
+                 .attr("fill", "red")
+                 .html("&#176;F")
+        };
 
         Chart.prototype.createFirst = function (data) {
 
@@ -189,6 +197,8 @@ var Chart = function (bar) {
             this.config.svg.append("g")
                 .attr("class", "y axis")
                 .call(this.config.yAxis);
+
+            this.createFSign();
 
         };
 

@@ -244,7 +244,6 @@
   color: grey;
   display: inline-block;
   vertical-align: top;
-  font-size: 20px;
 }
 
 #mobile-summary-visual-container {
@@ -278,7 +277,7 @@
 
 
 
-@media screen and (min-width: 711px) {
+@media screen and (min-width: 730px) {
   .chart-visual-container {}
   .chart-labels {}
   .container-input-history #mobile-now {
