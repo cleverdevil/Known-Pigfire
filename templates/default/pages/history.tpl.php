@@ -177,9 +177,9 @@
            var i;
            var uncorrectedTime;
 
-           for (i = 0; i < cookData.length; ++i){
-             uncorrectedTime = new Date(cookData.datetime);
-             cookData.datetime = new Date(uncorrectedTime.valueOf() - 25200000);
+           for (i = 0; i < cookData.data.length; ++i){
+             uncorrectedTime = new Date(cookData.data[i].datetime);
+             cookData.data[i].datetime = new Date(uncorrectedTime.valueOf() - 25200000);
            }
 
          };
