@@ -61,6 +61,8 @@ var Chart = function (bar) {
 
             var that = this;
 
+            var dataCopy = data.slice();
+
             // config.container would be a separate container from the body
             this.config.svg = d3.select(this.config.container)
                 .append('svg')
@@ -71,7 +73,7 @@ var Chart = function (bar) {
                 .attr("transform",
                     "translate(" + (this.config.margin.left) + "," + this.config.margin.top + ")");
 
-            this.createFirst(data);
+            this.createFirst(dataCopy);
 
             if (this.bar.passedSVG === undefined) {
                 this.bar.assignSVG(this.config.svg);
