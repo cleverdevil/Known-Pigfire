@@ -58,7 +58,7 @@ var Bar = function (color, height) {
        Bar.prototype.createCharts = function () {
 
            var i;
-           var startPos = this.config.lastPosition;
+           var startPos;
 
            this.passedSVG.selectAll('rect').remove();
 
