@@ -115,7 +115,6 @@
 
              for (i = 0; i < summaryLabelsArry.length; ++i){
                if(parentOfTabletContainer.children[0] === summaryLabelsArry[i]){
-                 alert("true");
                  summaryLabelsArry[i].style.display = "inline-block";
                } else {
                  summaryLabelsArry[i].style.display = "block";
