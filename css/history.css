@@ -261,7 +261,7 @@
   vertical-align: top;
 }
 
-.container-input-history .summary-chart-labels-tablet-container {
+.container-input-history #summary-chart-labels-tablet-container {
   text-align: right;
 }
 

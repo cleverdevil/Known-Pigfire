@@ -38,8 +38,8 @@
           <div class="summary-container" id="tablet-summary-container">
               <div class="summary-text-data" id="tablet-summary-text-data"></div>
               <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
-              <div class="summary-chart-labels-tablet-container">
-                  <div class="summary-chart-labels" style="display: inline-block">
+              <div id="summary-chart-labels-tablet-container">
+                  <div class="summary-chart-labels">
                       <div class="cooker-minimum-temp-label">cooker-min-temp</div>
                       <div class="cooker-maximum-temp-label">cooker-max-temp</div>
                       <br>
@@ -111,9 +111,15 @@
              var i;
              var summaryLabelsArry = document.getElementsByClassName('summary-chart-labels');
              var gaugeLabelsArry = document.getElementsByClassName('chart-labels');
+             var parentOfTabletContainer = document.getElementById("summary-chart-labels-tablet-container");
 
              for (i = 0; i < summaryLabelsArry.length; ++i){
+               if(parentOfTabletContainer.children[0] === summaryLabelsArry[i]){
+                 alert("true");
+                 summaryLabelsArry[i].style.display = "inline-block";
+               } else {
                  summaryLabelsArry[i].style.display = "block";
+               }
              }
 
              for (i = 0; i < gaugeLabelsArry.length; ++i){
