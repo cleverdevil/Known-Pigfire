@@ -363,7 +363,7 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
         "tablet-summary-visual-container" : {
         configFuncs : [{
         nameOfFunc : "configure",
-        data : {container: "#tablet-summary-visual-container", title : "State", width : 270, height: 350, xTicks : 0}
+        data : {container: "#tablet-summary-visual-container", title : "State", width : 240, height: 350, xTicks : 0}
         }, {
         nameOfFunc : "render",
         data : {"v1" : currentCook.summary["cooker-minimum-temp"], "v2" : currentCook.summary["cooker-maximum-temp"], "v3" : currentCook.summary["meat-minimum-temp"], "v4" : currentCook.summary["meat-maximum-temp"]}
