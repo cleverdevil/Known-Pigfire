@@ -277,7 +277,7 @@
 
 
 
-@media screen and (min-width: 730px) {
+@media screen and (min-width: 640px) {
   .chart-visual-container {}
   .chart-labels {}
   .container-input-history #mobile-now {
