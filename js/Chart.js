@@ -174,7 +174,7 @@ Chart.prototype.adjustTime = function (dateObj) {
 
             data.forEach(function (d) {
                 d.datetime = that.config.parseDate(d.datetime);
-                d.datetime = this.adjustTime(d.datetime);
+                d.datetime = that.adjustTime(d.datetime);
             });
 
 
@@ -224,7 +224,7 @@ Chart.prototype.adjustTime = function (dateObj) {
 
           data.forEach(function (d) {
               d.datetime = that.config.parseDate(d.datetime);
-              d.datetime = this.adjustTime(d.datetime);
+              d.datetime = that.adjustTime(d.datetime);
           });
 
           // Scale the range of the data

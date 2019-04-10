@@ -357,7 +357,7 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
             "tablet-current-visual-container" : {
         configFuncs : [{
           nameOfFunc : "configure",
-          data : {container: "#tablet-current-visual-container", title : "State", height : 300,  width : 590, xTicks : 6}
+          data : {container: "#tablet-current-visual-container", title : "State", height : 300,  width : 500, xTicks : 6}
         }, {
           nameOfFunc : "render",
           data : currentCook.data
