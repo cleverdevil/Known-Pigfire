@@ -176,13 +176,13 @@ Chart.prototype.adjustTime = function (dateObj) {
 
             data.forEach(function (d) {
                 d.datetime = that.config.parseDate(d.datetime);
-                d.datetime = that.adjustTime(d.datetime);
+                //d.datetime = that.adjustTime(d.datetime);
             });
 
 
 
             // Scale the range of the data
-            this.config.x.domain(d3.extent(data, function (d) { return d.datetime; }));
+            this.config.x.domain(d3.extent(data, function (d) { return new Date(d.datetime.valueOf() - 25200000)}));
             this.config.y.domain([0, maxTemp]);
 
             this.appendLine(data, true, "red", "cooker-target-temp", true);
@@ -228,11 +228,11 @@ Chart.prototype.adjustTime = function (dateObj) {
 
           dataCopy.forEach(function (d) {
               d.datetime = that.config.parseDate(d.datetime);
-              d.datetime = that.adjustTime(d.datetime);
+              //d.datetime = that.adjustTime(d.datetime);
           });
 
           // Scale the range of the data
-          this.config.x.domain(d3.extent(dataCopy, function (d) { return d.datetime; }));
+          this.config.x.domain(d3.extent(dataCopy, function (d) { return new Date(d.datetime.valueOf() - 25200000); }));
           this.config.y.domain([0, maxTemp]);
 
   // Select the section we want to apply our changes to
