@@ -38,9 +38,9 @@
           <div class="summary-container" id="tablet-summary-container">
               <div class="summary-text-data" id="tablet-summary-text-data"></div>
               <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
-              <div class="summary-chart-labels-tablet-container"> 
+              <div class="summary-chart-labels-tablet-container">
                   <div class="summary-chart-labels">
-                      <div class="cooker-minimum-temp-label">cooker-min-temp</div>
+                      <div class="cooker-minimum-temp-label">cooker-min-teasdfsadmp</div>
                       <div class="cooker-maximum-temp-label">cooker-max-temp</div>
                       <br>
                       <div class="meat-minimum-temp-label">meat-min-temp</div>
