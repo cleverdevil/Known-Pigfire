@@ -171,6 +171,20 @@
            };
          };
 
+         var correctTimeForCurrentChart = function(cookData){
+           //get 7 hours in miliseconds
+
+           var i;
+           var uncorrectedTime;
+
+           for (i = 0; i < cookData.length; ++i){
+             uncorrectedTime = new Date(cookData.datetime);
+             cookData.datetime = new Date(uncorrectedTime.valueOf() - 25200000);
+           }
+
+         };
+
+
          var formatString = function(dateObj){
 
 
@@ -319,6 +333,8 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
         d3.json(getId(), function(error, currentCook){
 
         populateSummaryTextData(currentCook);
+
+         correctTimeForCurrentChart(currentCook);
 
         mobile.initializeOrConfigureOrUpdate({
 

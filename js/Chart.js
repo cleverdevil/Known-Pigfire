@@ -61,8 +61,6 @@ var Chart = function (bar) {
 
             var that = this;
 
-            var dataCopy = data.slice();
-
             // config.container would be a separate container from the body
             this.config.svg = d3.select(this.config.container)
                 .append('svg')
@@ -73,7 +71,7 @@ var Chart = function (bar) {
                 .attr("transform",
                     "translate(" + (this.config.margin.left) + "," + this.config.margin.top + ")");
 
-            this.createFirst(dataCopy);
+            this.createFirst(data);
 
             if (this.bar.passedSVG === undefined) {
                 this.bar.assignSVG(this.config.svg);
@@ -158,16 +156,6 @@ var Chart = function (bar) {
                  .html("&#176;F")
         };
 
-Chart.prototype.adjustTime = function (dateObj) {
-
-          //get 7 hours in miliseconds
-          var timeDiff = 25200000;
-          var newTimeObj = new Date(dateObj.valueOf() - timeDiff);
-
-          return newTimeObj;
-
-};
-
         Chart.prototype.createFirst = function (data) {
 
             var that = this;
@@ -175,14 +163,11 @@ Chart.prototype.adjustTime = function (dateObj) {
             var maxTemp = this.getMaxTemp(data);
 
             data.forEach(function (d) {
-                d.datetime = that.config.parseDate(d.datetime);
-                //d.datetime = that.adjustTime(d.datetime);
+                //d.datetime = that.config.parseDate(d.datetime);
             });
 
-
-
             // Scale the range of the data
-            this.config.x.domain(d3.extent(data, function (d) { return new Date(d.datetime.valueOf() - 25200000)}));
+            this.config.x.domain(d3.extent(data, function (d) { return d.datetime; }));
             this.config.y.domain([0, maxTemp]);
 
             this.appendLine(data, true, "red", "cooker-target-temp", true);
@@ -222,45 +207,42 @@ Chart.prototype.adjustTime = function (dateObj) {
 
           var that = this;
 
-          var dataCopy = date.slice();
+          var maxTemp = this.getMaxTemp(data);
 
-          var maxTemp = this.getMaxTemp(dataCopy);
-
-          dataCopy.forEach(function (d) {
-              d.datetime = that.config.parseDate(d.datetime);
-              //d.datetime = that.adjustTime(d.datetime);
+          data.forEach(function (d) {
+            //  d.datetime = that.config.parseDate(d.datetime);
           });
 
           // Scale the range of the data
-          this.config.x.domain(d3.extent(dataCopy, function (d) { return new Date(d.datetime.valueOf() - 25200000); }));
+          this.config.x.domain(d3.extent(data, function (d) { return d.datetime; }));
           this.config.y.domain([0, maxTemp]);
 
   // Select the section we want to apply our changes to
   var svg = this.config.svg.transition();
 
-  var maxCookerCurrentTemp = d3.max(dataCopy, function (d) { return d["cooker-current-temp"]; });
+  var maxCookerCurrentTemp = d3.max(data, function (d) { return d["cooker-current-temp"]; });
 
-  var maxMeatTargetTemp = d3.max(dataCopy, function (d) { return d["meat-target-temp"]; });
+  var maxMeatTargetTemp = d3.max(data, function (d) { return d["meat-target-temp"]; });
 
-  var maxMeatCurrentTemp = d3.max(dataCopy, function (d) { return d["meat-current-temp"]; });
+  var maxMeatCurrentTemp = d3.max(data, function (d) { return d["meat-current-temp"]; });
   // Make the changes
 
      //last argument is set to true to redraw bars
       svg.select("#cooker-target-temp")   // change the line
           .duration(750)
-          .attr("d", this.lineProcessorGenerator(dataCopy, "cooker-target-temp", this, true));
+          .attr("d", this.lineProcessorGenerator(data, "cooker-target-temp", this, true));
 
       svg.select("#cooker-current-temp")   // change the line
           .duration(750)
-          .attr("d", this.lineProcessorGenerator(dataCopy, "cooker-current-temp", this, false));
+          .attr("d", this.lineProcessorGenerator(data, "cooker-current-temp", this, false));
 
       svg.select("#meat-target-temp")   // change the line
           .duration(750)
-          .attr("d", this.lineProcessorGenerator(dataCopy, "meat-target-temp", this, false));
+          .attr("d", this.lineProcessorGenerator(data, "meat-target-temp", this, false));
 
       svg.select("#meat-current-temp")   // change the line
           .duration(750)
-          .attr("d", this.lineProcessorGenerator(dataCopy, "meat-current-temp", this, false));
+          .attr("d", this.lineProcessorGenerator(data, "meat-current-temp", this, false));
 
       svg.select(".x.axis") // change the x axis
           .duration(750)
