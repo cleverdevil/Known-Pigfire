@@ -38,12 +38,15 @@
           <div class="summary-container" id="tablet-summary-container">
               <div class="summary-text-data" id="tablet-summary-text-data"></div>
               <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
-              <div class="summary-chart-labels">
+              <div style="text-align:right">
+              <div class="summary-chart-labels"style="text-align:center">
                   <div class="cooker-minimum-temp-label">cooker-min-temp</div>
                   <div class="cooker-maximum-temp-label">cooker-max-temp</div>
+                  <br>
                   <div class="meat-minimum-temp-label">meat-min-temp</div>
                   <div class="meat-maximum-temp-label">meat-max-temp</div>
               </div>
+            </div>
           </div>
 
           <div class="chart-visual-container" id="tablet-current-visual-container"></div>
