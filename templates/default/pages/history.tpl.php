@@ -238,11 +238,11 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
             for (i = 0; i < summaryElemsArr.length; ++i){
               summaryElemsArr[i].innerHTML =  '<table><tr><th>Start Time</th><td>'+this.formatString(timeAdjustedObj['timezoneAdjustedStartObj'])+'<td></tr>' +
               '<tr><th>End Time</th><td>'+this.formatString(timeAdjustedObj['timezoneAdjustedEndObj'])+'<td></tr>' +
-              '<tr><th>Duration</th><td>'+duration+'Seconds<td></tr>' +
-              '<tr><th>Cooker Minimum Temp</th><td>'+cookerMinimumTemp+'°F<td></tr>' +
-              '<tr><th>Cooker Maximum Temp</th><td>'+cookerMaximumTemp+'°F<td></tr>' +
-              '<tr><th>Meat Minimum Temp</th><td>'+meatMinimumTemp+'°F<td></tr>' +
-              '<tr><th>Meat Maximum Temp</th><td>'+meatMaximumTemp+'°F<td></tr>' + '</table>';
+              '<tr><th>Duration</th><td>'+duration+' Seconds<td></tr>' +
+              '<tr><th>Cooker Minimum Temp</th><td>'+cookerMinimumTemp+' °F<td></tr>' +
+              '<tr><th>Cooker Maximum Temp</th><td>'+cookerMaximumTemp+' °F<td></tr>' +
+              '<tr><th>Meat Minimum Temp</th><td>'+meatMinimumTemp+' °F<td></tr>' +
+              '<tr><th>Meat Maximum Temp</th><td>'+meatMaximumTemp+' °F<td></tr>' + '</table>';
             }
 
 
@@ -331,7 +331,7 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
         "mobile-summary-visual-container" : {
         configFuncs : [{
         nameOfFunc : "configure",
-        data : {container: "#mobile-summary-visual-container", title : "State", width : 250, xTicks : 0}
+        data : {container: "#mobile-summary-visual-container", title : "State", width : 350, xTicks : 0}
         }, {
         nameOfFunc : "render",
         data : {"v1" : currentCook.summary["cooker-minimum-temp"], "v2" : currentCook.summary["cooker-maximum-temp"], "v3" : currentCook.summary["meat-minimum-temp"], "v4" : currentCook.summary["meat-maximum-temp"]}
@@ -363,7 +363,7 @@ return (month + ' ' + date + ', ' + year + ' - ' + hoursArry[0] + ':' + minutes 
         "tablet-summary-visual-container" : {
         configFuncs : [{
         nameOfFunc : "configure",
-        data : {container: "#tablet-summary-visual-container", title : "State", width : 290, xTicks : 0}
+        data : {container: "#tablet-summary-visual-container", title : "State", width : 290, height: 350, xTicks : 0}
         }, {
         nameOfFunc : "render",
         data : {"v1" : currentCook.summary["cooker-minimum-temp"], "v2" : currentCook.summary["cooker-maximum-temp"], "v3" : currentCook.summary["meat-minimum-temp"], "v4" : currentCook.summary["meat-maximum-temp"]}
