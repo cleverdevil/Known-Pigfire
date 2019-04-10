@@ -40,6 +40,21 @@
 
         <script>
 
+
+        var correctTimeForCurrentChart = function(cookData){
+          //get 7 hours in miliseconds
+
+          var i;
+          var uncorrectedTime;
+
+          for (i = 0; i < cookData.data.length; ++i){
+            uncorrectedTime = new Date(cookData.data[i].datetime);
+            cookData.data[i].datetime = new Date(uncorrectedTime.valueOf() - 25200000);
+          }
+
+        };
+
+
         var SvgScreenDeviceGenerator = function(deviceName){
           this.deviceName = deviceName;
         };
@@ -104,6 +119,9 @@
         };
 
         var updateChart = function(currentCook){
+
+correctTimeForCurrentChart(currentCook);
+
           mobile.initializeOrConfigureOrUpdate({
               "#mobile-target-gauge" : {
                   configFuncs : [{
@@ -202,6 +220,8 @@
         });
 
         d3.json("https://ui7363dy38.execute-api.us-east-1.amazonaws.com/dev/cooks/current.json", function(error, currentCook){
+
+correctTimeForCurrentChart(currentCook);
 
         mobile.initializeOrConfigureOrUpdate({
             "#mobile-target-gauge" : {
