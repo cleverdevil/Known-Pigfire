@@ -39,7 +39,7 @@
               <div class="summary-text-data" id="tablet-summary-text-data"></div>
               <div class="chart-visual-container" id="tablet-summary-visual-container"></div>
               <div style="text-align:right">
-              <div class="summary-chart-labels"style="text-align:center; display: inline-block; left : -10px">
+              <div class="summary-chart-labels" style="text-align:center; display: inline-block; left : -10px">
                   <div class="cooker-minimum-temp-label">cooker-min-temp</div>
                   <div class="cooker-maximum-temp-label">cooker-max-temp</div>
                   <br>
